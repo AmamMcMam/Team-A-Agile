@@ -1,5 +1,6 @@
 const express = require('express')
-const nunjucks = require('nunjucks'); 
+const nunjucks = require('nunjucks');
+const fetch = require('node-fetch')
 
 const app = express()
 nunjucks.configure('viewdir', { 
@@ -11,7 +12,11 @@ app.use(express.static(__dirname+'/public/images'));
 
 // Add routes
 app.get('/', async (req, res) => {
-    res.render('template'); 
+    const response = await fetch('http://localhost:8080/api/',{method:'GET',headers:{}})
+    const data = await response.json();
+    console.log(data);
+    res.render('layout', {test: data}); 
+
   });
 
 app.listen(6555, function() { 
