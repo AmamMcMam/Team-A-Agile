@@ -1,0 +1,10 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mappers.TestInterface">
+<resultMap id="TestMap" type="Test">
+    <result column="lastname" property="lastname"/>
+<result column="firstname" property="firstname"/>
+<result column="employee_id" property="employee_id"/>
+</resultMap>
+</mapper>
