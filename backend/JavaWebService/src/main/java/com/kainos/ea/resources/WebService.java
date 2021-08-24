@@ -27,6 +27,19 @@ public class WebService {
         List<User> test = jobRoles.findAllUsers();
         return test;
     }
+
+    @GET
+    @Path("/job-roles")
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<? extends Object> getJobRoles(){
+        if (sqlSession == null) {
+            initDBConnection();
+        }
+        TestMapper jobRoles = sqlSession.getMapper(TestMapper.class);
+        List<Roles> roles = jobRoles.viewJobRoles();
+        return roles;
+    }
+
     public void initDBConnection(){
         try (Reader settings = Resources.getResourceAsReader("mybatis-config.xml")) {
             SqlSessionFactoryBuilder mybatis = new SqlSessionFactoryBuilder();
