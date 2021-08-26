@@ -1,0 +1,4 @@
+pages/JobRolesPage.class
+integration/RunCucumberTest.class
+integration/JobRolesStepDefinitions.class
+pages/PageObject.class
