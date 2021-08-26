@@ -31,7 +31,7 @@ public class WebService {
     @GET
     @Path("/job-roles")
     @Produces(MediaType.APPLICATION_JSON)
-    public List<? extends Object> getJobRoles(){
+    public List<Roles> getJobRoles(){
         if (sqlSession == null) {
             initDBConnection();
         }
