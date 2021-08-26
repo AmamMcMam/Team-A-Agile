@@ -11,6 +11,6 @@ public interface TestMapper {
     @Select("select firstname from testTable")
     List<User> findAllUsers();
 
-    @Select("select roleName from roles;")
+    @Select("select * from roles;")
     List<Roles> viewJobRoles();
 }

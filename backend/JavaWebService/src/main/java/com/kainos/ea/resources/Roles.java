@@ -21,10 +21,6 @@ public class Roles {
         this.capabilityID = capabilityID;
     }
 
-    public Roles(String roleName) {
-        this.roleName = roleName;
-    }
-
     public int getRoleID() {
         return roleID;
     }
