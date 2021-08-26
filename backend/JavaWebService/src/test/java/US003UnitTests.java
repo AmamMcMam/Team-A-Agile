@@ -11,7 +11,7 @@ public class US003UnitTests {
     @Test
     public void testEngineeringCapability(){
         WebService webService = new WebService();
-        List<Roles> roles = webService.getRolesForCapability("2");
+        List<Roles> roles = webService.getRolesForCapability(2);
         String test = roles.get(0).getRoleName();
         assertEquals(test,"Market Intelligence Analyst");
     }

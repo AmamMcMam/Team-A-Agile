@@ -27,18 +27,36 @@ public class WebService {
         List<User> test = jobRoles.findAllUsers();
         return test;
     }
+
     @GET
-    @Path("/job-roles/{capabilityId}")
+    @Path("/capabilities")
     @Produces(MediaType.APPLICATION_JSON)
-    public List<Roles> getRolesForCapability(@PathParam("capabilityId") String capabilityId){
+    public List<Capability> capabilities(){
+        return getCapability();
+    }
+
+    private List<Capability> getCapability(){
         if (sqlSession == null) {
             initDBConnection();
         }
-        TestMapper c = sqlSession.getMapper(TestMapper.class);
-        String name = c.capabilityOfId(capabilityId);
-        List<Roles> roles = c.rolesPerCapability(name);
-        return roles;
+        TestMapper query = sqlSession.getMapper(TestMapper.class);
+        return query.getCapabilities();
     }
+
+    @GET
+    @Path("/job-roles/{capabilityId}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<Roles> getRolesForCapability(@PathParam("capabilityId") int capabilityId){
+        return getJobsForCapability(capabilityId);
+    }
+
+    private List<Roles> getJobsForCapability(int id){
+        if (sqlSession == null) {
+            initDBConnection();
+        }
+        TestMapper query = sqlSession.getMapper(TestMapper.class);
+        return query.rolesPerCapability(id);
+    };
 
     @GET
     @Path("/job-roles")

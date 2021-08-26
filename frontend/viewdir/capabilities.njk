@@ -1,0 +1,13 @@
+{% extends "template.njk" %}
+
+{% block content %}
+    <div class="container">
+        <h5 style="color:#575756">Capabilities</span></h5>
+        <div class="divider"></div>
+        {% for item in items %}
+            <div class="section">
+                <h5 style="color:#009fe3"><a href="/job-roles/{{item.capabilityID}}">{{item.capability}}</a></h5>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
