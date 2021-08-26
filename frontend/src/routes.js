@@ -19,6 +19,15 @@ app.get('/', async (req, res) => {
 
   });
 
+app.get('/job-roles/', async (req, res) => {
+    var id = req.query.id;
+    const response = await fetch('http://localhost:8080/api/job-roles/' + id,{method:'GET',headers:{}})
+    const data = await response.json();
+    console.log(data);
+    res.render('bandPage', {data: data}); 
+
+});
+
 app.listen(6555, function() { 
     console.log('Express started') 
  });

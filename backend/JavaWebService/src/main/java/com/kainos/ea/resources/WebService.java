@@ -1,5 +1,6 @@
 package com.kainos.ea.resources;
 
+import com.kainos.ea.db.BandMapper;
 import com.kainos.ea.db.TestMapper;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
@@ -27,6 +28,19 @@ public class WebService {
         List<User> test = jobRoles.findAllUsers();
         return test;
     }
+
+    @GET
+    @Path("/job-roles/{id}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Band getRolePerBand(@PathParam("id") int roleID){
+        if (sqlSession == null) {
+            initDBConnection();
+        }
+        BandMapper roleBand = sqlSession.getMapper(BandMapper.class);
+        Band band = roleBand.getRolePerBand(roleID);
+        return band;
+    }
+
     public void initDBConnection(){
         try (Reader settings = Resources.getResourceAsReader("mybatis-config.xml")) {
             SqlSessionFactoryBuilder mybatis = new SqlSessionFactoryBuilder();
