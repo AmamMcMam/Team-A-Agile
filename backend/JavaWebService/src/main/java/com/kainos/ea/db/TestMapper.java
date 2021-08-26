@@ -13,4 +13,11 @@ public interface TestMapper {
 
     @Select("select * from roles;")
     List<Roles> viewJobRoles();
+    //roleID | roleName                    | roleDesc    | datePosted | hours     | location          | bandID | capabilityID
+
+    @Select("select roleID,roleName,roleDesc,datePosted,hours,location,bandID,capabilityID from roles JOIN capability using(capabilityID) where capability = #{cap}")
+    List<Roles> rolesPerCapability(@Param("cap") String capability);
+
+    @Select("select capability from capability where capabilityID = #{id};")
+    String capabilityOfId(@Param("id") String id);
 }

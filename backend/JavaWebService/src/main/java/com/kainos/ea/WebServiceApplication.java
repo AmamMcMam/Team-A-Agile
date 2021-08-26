@@ -31,6 +31,7 @@ public class WebServiceApplication extends Application<WebServiceConfiguration> 
                     final Environment environment) {
         // TODO: implement application
         environment.jersey().register(new WebService());
+
     }
 
 }
