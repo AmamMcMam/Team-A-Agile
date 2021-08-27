@@ -27,6 +27,24 @@ app.get('/job-roles', async (req, res) => {
 
 });
 
+app.get('/job-roles/:id', async (req, res) => {
+    id = req.params.id;
+    const response = await fetch('http://localhost:8080/api/job-roles/' + id,{method:'GET',headers:{}})
+    const roleData = await response.json();
+    console.log(roleData);
+    res.render('jobRolesPage', {items: roleData}); 
+
+});
+
+app.get('/capabilities', async (req, res) => {
+    const response = await fetch('http://localhost:8080/api/capabilities',{method:'GET',headers:{}})
+    const caps = await response.json();
+    console.log(caps);
+    res.render('capabilities', {items: caps}); 
+
+});
+
+
 app.listen(6555, function() { 
     console.log('Express started') 
  });
