@@ -16,8 +16,8 @@
         </environment>
     </environments>
     <mappers>
-        <mapper class="com.kainos.ea.db.TestMapper"/>
-        <mapper class="com.kainos.ea.db.BandMapper"/>
+        <mapper class="com.kainos.ea.db.RolesMapper"/>
+        <mapper class="com.kainos.ea.db.RoleMapper"/>
     </mappers>
 
 </configuration>

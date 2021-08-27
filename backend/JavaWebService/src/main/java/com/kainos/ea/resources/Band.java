@@ -1,6 +1,6 @@
 package com.kainos.ea.resources;
 
-public class Band {
+public class Band{
     private int bandID;
     private String bandName;
     private String bandExpectations;
@@ -14,6 +14,10 @@ public class Band {
     public String getBandName() {
         System.out.println(bandName);
         return bandName;
+    }
+
+    public void setBandName(String bandName) {
+        this.bandName = bandName;
     }
 
     public String getBandExpectations() {
