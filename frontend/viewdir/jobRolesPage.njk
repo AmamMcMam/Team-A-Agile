@@ -1,0 +1,14 @@
+{% extends "template.njk" %}
+
+{% block content %}
+    <div class="container">
+        <h5 style="color:#575756"><span id="resultsHeader">{{items.length}}</span> results</span></h5>
+        <div class="divider"></div>
+        {% for item in items %}
+            <div class="section">
+                <h5 style="color:#009fe3"><a id="role-{{item.roleID}}" href="/job-roles/{{item.roleID}}">{{item.roleName}}</a></h5>
+                <p style="color:#575756"><span id="location-{{item.roleID}}">{{item.location}}</span> | Posted <span id="date-{{item.roleID}}">{{item.datePosted}}</span></p>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
