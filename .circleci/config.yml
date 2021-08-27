@@ -2,7 +2,8 @@ jobs:
   build:
     docker:
       - image: circleci/openjdk:stretch
-    working_directory: ~/backend
+    working_directory: ~/backend/JavaWebServices
     steps:
-      - checkout
+      - checkout:
+          path: ~/backend/JavaWebServices
       - run: mvn test
