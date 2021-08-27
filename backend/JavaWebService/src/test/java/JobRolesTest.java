@@ -9,7 +9,7 @@ import java.util.List;
 
 import static junit.framework.TestCase.*;
 
-public class US001UnitTests {
+public class JobRolesTest {
     //do more unit tests in USCASE 12 for less flakey tests
     @Test
     public void rolesArePresent(){
@@ -18,5 +18,6 @@ public class US001UnitTests {
         Roles role = roles.get(0);
         assertEquals(role.getRoleID(),1);
     }
+
 
 }
