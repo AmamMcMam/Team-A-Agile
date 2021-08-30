@@ -5,6 +5,8 @@ public class Band{
     private String bandName;
     private String bandExpectations;
 
+    public Band(){}
+
     public Band(int bandID, String bandName, String bandExpectations){
         this.bandID = bandID;
         this.bandName = bandName;
@@ -12,7 +14,6 @@ public class Band{
     }
 
     public String getBandName() {
-        System.out.println(bandName);
         return bandName;
     }
 
