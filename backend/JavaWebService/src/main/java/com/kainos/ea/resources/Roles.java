@@ -12,6 +12,7 @@ public class Roles {
     private int capabilityID;
     private int responsibilityID;
 
+
     public Roles(int roleID, String roleName, String roleDesc, String datePosted, String hours, String location, int bandID, int capabilityID, int responsibilityID) {
         this.roleID = roleID;
         this.roleName = roleName;

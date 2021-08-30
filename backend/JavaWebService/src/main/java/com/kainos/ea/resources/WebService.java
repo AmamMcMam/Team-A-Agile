@@ -1,6 +1,7 @@
 package com.kainos.ea.resources;
 
-import com.kainos.ea.db.TestMapper;
+import com.kainos.ea.db.RoleMapper;
+import com.kainos.ea.db.RolesMapper;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -18,28 +19,46 @@ import java.util.List;
 public class WebService {
     private SqlSession sqlSession;
 
-    @GET
-    @Path("/")
-    @Produces(MediaType.APPLICATION_JSON)
-    public List<? extends Object> testMyBatis(){
-        if (sqlSession == null) {
-            initDBConnection();
-        }
-        TestMapper jobRoles = sqlSession.getMapper(TestMapper.class);
-        List<User> test = jobRoles.findAllUsers();
-        return test;
-    }
+//    @GET
+//    @Path("/")
+//    @Produces(MediaType.APPLICATION_JSON)
+//    public List<? extends Object> testMyBatis(){
+//    }
 
     @GET
     @Path("/job-roles")
     @Produces(MediaType.APPLICATION_JSON)
-    public List<? extends Object> getJobRoles(){
+    public List<Roles> getJobRoles(){
         if (sqlSession == null) {
             initDBConnection();
         }
-        TestMapper jobRoles = sqlSession.getMapper(TestMapper.class);
+        RolesMapper jobRoles = sqlSession.getMapper(RolesMapper.class);
         List<Roles> roles = jobRoles.viewJobRoles();
         return roles;
+    }
+
+    @GET
+    @Path("/job-roles/{id}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Roles getRole (@PathParam("id") int roleID) {
+        if (sqlSession == null) {
+            initDBConnection();
+        }
+        RoleMapper jobRole = sqlSession.getMapper(RoleMapper.class);
+        Roles role = jobRole.getRole(roleID);
+        return role;
+    }
+
+    @GET
+    @Path("/bands/{id}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Band getBand (@PathParam("id") int bandID) {
+        if (sqlSession == null) {
+            initDBConnection();
+        }
+        RoleMapper jobRole = sqlSession.getMapper(RoleMapper.class);
+        Band band = jobRole.getBand(bandID);
+        return band;
     }
 
     @GET
