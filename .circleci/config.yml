@@ -5,7 +5,7 @@ jobs:
     working_directory: ~/Team-A-Agile/backend/JavaWebService
     steps:
       - run: java --version
-      - checkout:
-          path: ~/Team-A-Agile
+      - run: ls
+      - checkout
       - run: mvn clean install
       - run: mvn test
