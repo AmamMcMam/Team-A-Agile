@@ -4,15 +4,12 @@ jobs:
       - image: circleci/openjdk:stretch
     working_directory: ~/Team-A-Agile/backend/JavaWebService
     steps:
+      - run: java --version
       - checkout:
           path: ~/Team-A-Agile
-      - run: mvn clean install
-        
-  test:
-    docker:
-      - image: circleci/openjdk:stretch
-    working_directory: ~/Team-A-Agile/backend/JavaWebService
-    steps:
-      - checkout:
-          path: ~/Team-A-Agile
-      - run: mvn test
+      - run: 
+        name: Install dependencies
+        command: mvn clean install
+      - run: 
+        name: Run unit tests
+        command: mvn test
