@@ -9,12 +9,6 @@ import java.util.List;
 
 @Mapper
 public interface TestMapper {
-    @Select("select firstname from testTable")
-    List<User> findAllUsers();
-
-    @Select("select * from roles;")
-    List<Roles> viewJobRoles();
-
     @Select("select roleID,roleName,roleDesc,datePosted,hours,location,bandID,capabilityID from roles JOIN capability using(capabilityID) where capabilityID = #{cap}")
     List<Roles> rolesPerCapability(@Param("cap") int capability);
 

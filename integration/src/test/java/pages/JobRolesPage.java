@@ -10,20 +10,44 @@ public class JobRolesPage extends PageObject {
 
     @FindBy(id = "resultsHeader") private WebElement resultsHeader;
 
-    @FindBy(id = "roleName")
+    @FindBy(className = "section")
     private List<WebElement> amountOfJobs;
 
-    @FindBy(id = "roleInfo")
-    private WebElement roleInfo;
+    @FindBy(id = "date-1")
+    private WebElement date;
 
-    public JobRolesPage(WebDriver driver) { super(driver); }
+    @FindBy(id = "location-1")
+    private WebElement location;
+
+    @FindBy(id = "role-1")
+    private WebElement roleName;
+
+
+    public JobRolesPage(WebDriver driver) {
+        super(driver);
+    }
 
     public int getResults() {
         return Integer.parseInt(resultsHeader.getText());
     }
 
+    public String getRoleName() {
+        return roleName.getText();
+    }
+
+    public String getLocation() {
+        return location.getText();
+    }
+
+    public String getDate() {
+        return date.getText();
+    }
+
     public int getTotalJobRoles() {
-        System.out.println(amountOfJobs.size());
         return amountOfJobs.size();
+    }
+
+    public void clickJobRole() {
+        roleName.click();
     }
 }
