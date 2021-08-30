@@ -155,8 +155,8 @@
                 <version>3.8.0</version>
                 <configuration>
                     <release>16</release>
-                    <source>16</source>
-                    <target>16</target>
+                    <source>1.8</source>
+                    <target>1.8</target>
                 </configuration>
             </plugin>
             <plugin>
