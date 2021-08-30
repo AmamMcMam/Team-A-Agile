@@ -7,9 +7,5 @@ jobs:
       - run: java --version
       - checkout:
           path: ~/Team-A-Agile
-      - run: 
-        name: Install dependencies
-        command: mvn clean install
-      - run: 
-        name: Run unit tests
-        command: mvn test
+      - run: mvn clean install
+      - run: mvn test
