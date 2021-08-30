@@ -5,12 +5,14 @@ import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+import com.kainos.ea.db.JobResponsibility;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import java.io.IOException;
 import java.io.Reader;
 import java.util.List;
+
 
 @Path("/api")
 public class WebService {
@@ -38,6 +40,18 @@ public class WebService {
         TestMapper jobRoles = sqlSession.getMapper(TestMapper.class);
         List<Roles> roles = jobRoles.viewJobRoles();
         return roles;
+    }
+
+    @GET
+    @Path("/job-roles/{id}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<?extends Object> getJobResp(@PathParam("id") int id){
+        if(sqlSession == null){
+            initDBConnection();
+        }
+        JobResponsibility jobResponsibility = sqlSession.getMapper(JobResponsibility.class);
+        List<JobResponsibilities> resps = jobResponsibility.getJobResp(id);
+        return resps;
     }
 
     public void initDBConnection(){

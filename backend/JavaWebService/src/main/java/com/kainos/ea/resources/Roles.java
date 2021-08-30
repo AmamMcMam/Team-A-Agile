@@ -1,6 +1,7 @@
 package com.kainos.ea.resources;
 
 public class Roles {
+
     private int roleID;
     private String roleName;
     private String roleDesc;
@@ -9,8 +10,9 @@ public class Roles {
     private String location;
     private int bandID;
     private int capabilityID;
+    private int responsibilityID;
 
-    public Roles(int roleID, String roleName, String roleDesc, String datePosted, String hours, String location, int bandID, int capabilityID) {
+    public Roles(int roleID, String roleName, String roleDesc, String datePosted, String hours, String location, int bandID, int capabilityID, int responsibilityID) {
         this.roleID = roleID;
         this.roleName = roleName;
         this.roleDesc = roleDesc;
@@ -19,6 +21,7 @@ public class Roles {
         this.location = location;
         this.bandID = bandID;
         this.capabilityID = capabilityID;
+        this.responsibilityID = responsibilityID;
     }
 
     public int getRoleID() {
@@ -84,4 +87,6 @@ public class Roles {
     public void setCapabilityID(int capabilityID) {
         this.capabilityID = capabilityID;
     }
+
+    public int getResponsibilityID() {return responsibilityID;}
 }
