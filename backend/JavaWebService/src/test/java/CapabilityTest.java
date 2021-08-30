@@ -7,7 +7,7 @@ import java.util.List;
 import static junit.framework.TestCase.*;
 
 
-public class US003UnitTests {
+public class CapabilityTest {
     @Test
     public void testEngineeringCapability(){
         WebService webService = new WebService();
