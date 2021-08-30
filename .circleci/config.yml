@@ -6,4 +6,6 @@ jobs:
     steps:
       - checkout:
           path: ~/Team-A-Agile
-      - run: mvn test
+      - run: |
+        mvn clean install
+        mvn test
