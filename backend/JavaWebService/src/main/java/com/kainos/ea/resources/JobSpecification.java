@@ -8,8 +8,7 @@ public class JobSpecification {
     private String hours;
     private String location;
 
-    public JobSpecification(){
-
+    public JobSpecification() {
     }
 
     public JobSpecification(int roleID, String roleName, String roleDesc,
