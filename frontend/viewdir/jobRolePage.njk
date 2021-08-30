@@ -3,6 +3,17 @@
 {% block content %}
     <div class="container">
         <h3 id="roleName" style="color:#575756">{{role.roleName}}</h3>
-        <h5><span style="color:#41679f">Band Level: </span><span id="bandName" style="color:#575756">{{band.bandName}}</span></h5>
+        <h5>
+            <span style="color:#41679f">Band Level: </span><span id="bandName" style="color:#575756">{{band.bandName}}</span></h5>
+
+        <div class="description">
+            <div class="divider"></div>
+            <div class="section">
+            <h6>Date Posted: {{specification.datePosted}} | {{specification.hours}} | {{specification.location}}</h6>
+                <div class="divider"></div>
+                <h6>Role Description</h6>
+                <p id="description">{{specification.roleDesc}}</p>
+            </div>
+        </div>
     </div>
 {% endblock %}
