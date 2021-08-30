@@ -4,7 +4,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.openqa.selenium.WebDriver;
-import pages.CaabilitiesPage;
+import pages.CapabilitiesPage;
 import pages.JobRolesPage;
 
 import static org.junit.Assert.assertEquals;
@@ -17,7 +17,7 @@ public class CapabilitiesPageStepDefinitions {
     @Given("The Kainos employee is on the capabilities page")
     public CapabilitiesPageStepDefinitions employeeViewsCapabilitiesPage() {
         driver.navigate().to(CAPABILITIES_PAGE);
-        CaabilitiesPage capsPage= new CaabilitiesPage(driver);
+        CapabilitiesPage capsPage= new CapabilitiesPage(driver);
         assertEquals(capsPage.getTitle(), "Capabilities");
         return this;
     }
@@ -25,7 +25,7 @@ public class CapabilitiesPageStepDefinitions {
 
     @Then("The client clicks on the {} capability")
     public CapabilitiesPageStepDefinitions TheClientClicksOn(String capName) {
-        CaabilitiesPage capsPage = new CaabilitiesPage(driver);
+        CapabilitiesPage capsPage = new CapabilitiesPage(driver);
         assertTrue(capsPage.isCapability(capName));
         driver.navigate().to(capsPage.getCapabilityRolesLink(capName));
         return this;

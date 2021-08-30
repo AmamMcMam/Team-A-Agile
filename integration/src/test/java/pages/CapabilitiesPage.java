@@ -6,13 +6,13 @@ import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
 
-public class CaabilitiesPage extends PageObject{
+public class CapabilitiesPage extends PageObject{
 
     @FindBy(id = "capTitle") private WebElement Title;
 
     @FindBy(id = "capName") private List<WebElement> capabilities;
 
-    public CaabilitiesPage(WebDriver driver) {
+    public CapabilitiesPage(WebDriver driver) {
         super(driver);
     }
 

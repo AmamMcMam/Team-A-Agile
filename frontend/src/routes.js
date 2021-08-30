@@ -52,6 +52,13 @@ app.get('/capabilities', async (req, res) => {
 
 });
 
+app.get('/capabilities/:id', async (req, res) => {
+    var id = req.params.id;
+    const response = await fetch(api_url+'capabilities/'+id,{method:'GET',headers:{}})
+    const roleData = await response.json();
+    res.render('jobRolesPage', {items: roleData}); 
+});
+
 app.listen(6555, function() {
     console.log('Express started') 
  });

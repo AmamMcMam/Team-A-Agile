@@ -4,6 +4,8 @@ public class Capability {
     private int capabilityID;
     private String capability;
 
+    public Capability() {}
+
     public Capability(int capabilityID, String capability) {
         this.capabilityID = capabilityID;
         this.capability = capability;
