@@ -6,6 +6,21 @@ jobs:
     steps:
       - checkout:
           path: ~/Team-A-Agile
-      - run: |
-        mvn clean install
-        mvn test
+      - run: mvn clean install
+        
+  test:
+    docker:
+      - image: circleci/openjdk:stretch
+    working_directory: ~/Team-A-Agile/backend/JavaWebService
+    steps:
+      - checkout:
+          path: ~/Team-A-Agile
+      - run: mvn test
+
+workflows:
+  build_and_test:
+    jobs:
+      - build
+      - test:
+          requires:
+            - build
