@@ -6,21 +6,26 @@
 
         <div class="row">
             <h6>
-                <div class="col">Date Posted: {{specification.datePosted}}</div>
-                <div class="col">{{specification.hours}}</div>
-                <div class="col">{{specification.location}}</div>
+                <div class="col" id="roleDatePosted">Date Posted: {{specification.datePosted}}</div>
+                <div class="col" id="roleHours">{{specification.hours}}</div>
+                <div class="col" id="roleLocation">{{specification.location}}</div>
             </h6>
         </div>
 
         <div class="divider"></div>
 
-        <h5><span style="color:#41679f">Band Level: </span><span id="bandName" style="color:#575756">{{band.bandName}}</span></h5>
+        <h5>
+            <span style="color:#41679f">Band Level: </span><span id="bandName" style="color:#575756">{{band.bandName}}</span></h5>
 
         <div class="description">
             <div class="divider"></div>
             <div class="section">
                 <h5><span style="color:#41679f">Role Description </span></h5>
                 <p id="description">{{specification.roleDesc}}</p>
+                {% if specification.link !== "" %}
+                <a href="{{specification.link}}"
+                        id="specificationLink">View on Sharepoint</a>
+                        {% endif %}
             </div>
         </div>
     </div>
