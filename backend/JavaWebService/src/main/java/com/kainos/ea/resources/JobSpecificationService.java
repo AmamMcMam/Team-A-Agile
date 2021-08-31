@@ -3,7 +3,6 @@ package com.kainos.ea.resources;
 import com.kainos.ea.db.RoleMapper;
 
 public class JobSpecificationService {
-    private JobSpecification jobSpecification;
     private RoleMapper specificationMapper;
 
     public JobSpecificationService(RoleMapper specificationMapper) {
