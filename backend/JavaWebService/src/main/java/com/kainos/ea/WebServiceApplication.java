@@ -48,11 +48,9 @@ public class WebServiceApplication extends Application<WebServiceConfiguration> 
 
         RoleService rolesService = new RoleService(rolesMapper, roleMapper);
         BandService bandService = new BandService(roleMapper);
-        JobSpecificationService jobSpecificationService = new JobSpecificationService(roleMapper);
 
         environment.jersey().register(new BandsController(bandService));
         environment.jersey().register(new JobRolesController(rolesService));
-        environment.jersey().register(new JobSpecificationController(jobSpecificationService));
     }
 
 }

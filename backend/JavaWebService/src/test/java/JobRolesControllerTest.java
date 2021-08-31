@@ -9,6 +9,7 @@ import org.mockito.junit.MockitoJUnitRunner;
 
 import java.util.List;
 
+import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 
 @RunWith(MockitoJUnitRunner.class)
@@ -29,5 +30,20 @@ public class JobRolesControllerTest {
         //assert
         assertTrue(roles == roleList);
         Mockito.verify(mockService).getRoles();
+    }
+    @Test
+    public void controllerReturnsSameRolesSpecificationsAsServiceProvides(){
+        //arrange
+        JobRolesController controller = new JobRolesController(mockService);
+        Role roleObj = new Role();
+        int roleID = 1;
+        Mockito.when(mockService.getJobSpecification(roleID)).thenReturn(roleObj);
+
+        //act
+        Role role = controller.getJobSpecification(roleID);
+
+        //assert
+        assertSame(role, roleObj);
+        Mockito.verify(mockService).getJobSpecification(roleID);
     }
 }

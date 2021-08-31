@@ -52,7 +52,7 @@ public class JobRolesPage extends PageObject {
     public void clickJobRole() {
         roleName.click();
     }
-    public void clickJobRole2() {
+    public void clickSecondRoleOnPage() {
         roleName2.click();
     }
 }

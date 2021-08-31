@@ -38,8 +38,8 @@ public class JobRolePage extends PageObject {
         return bandName.getText();
     }
 
-    public WebElement getRoleName() {
-        return roleName;
+    public String getRoleName() {
+        return roleName.getText();
     }
 
     public WebElement getRoleDatePosted() {
