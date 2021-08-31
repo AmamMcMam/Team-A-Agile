@@ -8,7 +8,10 @@ import java.util.List;
 
 @Mapper
 public interface CapabilityMapper {
-    @Select("select roleID,roleName,roleDesc,datePosted,hours,location,bandID,capabilityID from roles JOIN capability using(capabilityID) where capabilityID = #{cap}")
+    @Select("""
+            select roleID,roleName,roleDesc,datePosted,hours,location,bandID,capabilityID
+            from roles JOIN capability using(capabilityID)
+            where capabilityID = #{cap}""")
     List<Role> rolesPerCapability(@Param("cap") int capability);
 
     @Select("select capabilityID, capability from capability")

@@ -1,4 +1,6 @@
-import com.kainos.ea.resources.*;
+import com.kainos.ea.resources.CapabilitiesController;
+import com.kainos.ea.resources.CapabilitiesService;
+import com.kainos.ea.resources.Capability;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
@@ -7,7 +9,7 @@ import org.mockito.junit.MockitoJUnitRunner;
 
 import java.util.List;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertSame;
 
 @RunWith(MockitoJUnitRunner.class)
 public class CapabilityControllerTest {
@@ -25,7 +27,7 @@ public class CapabilityControllerTest {
         List<Capability> caps = controller.getCapabilities();
 
         //assert
-        assertTrue(caps == capList);
+        assertSame(caps, capList);
         Mockito.verify(mockService).getCapabilities();
     }
 }

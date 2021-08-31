@@ -18,10 +18,14 @@ public class CapabilitiesController {
     @GET
     @Path("/capabilities")
     @Produces(MediaType.APPLICATION_JSON)
-    public List<Capability> getCapabilities(){ return service.getCapabilities(); }
+    public List<Capability> getCapabilities(){
+        return service.getCapabilities();
+    }
 
     @GET
     @Path("/capabilities/{capabilityId}")
     @Produces(MediaType.APPLICATION_JSON)
-    public List<Role> getRolesForCapability(@PathParam("capabilityId") int capabilityId){ return service.rolesPerCapability(capabilityId); }
+    public List<Role> getRolesForCapability(@PathParam("capabilityId") int capabilityId){
+        return service.rolesPerCapability(capabilityId);
+    }
 }

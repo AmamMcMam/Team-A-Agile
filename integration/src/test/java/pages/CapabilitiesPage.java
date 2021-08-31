@@ -21,8 +21,7 @@ public class CapabilitiesPage extends PageObject{
         return Title.getText(); }
 
     public boolean isCapability (String capability) {
-        for (WebElement cap : capabilities)
-        {
+        for (WebElement cap : capabilities) {
             if (cap.getText().equals(capability)) {
                 return true;
             }
@@ -31,13 +30,10 @@ public class CapabilitiesPage extends PageObject{
     }
 
     public String getCapabilityRolesLink(String capability) {
-
-        for (WebElement cap : capabilities)
-        {
-            if (cap.getText().equals(capability)) {
-                return cap.getAttribute("href");
-            }
-        }
-        return "Not There";
+        return capabilities.stream()
+                .filter(cap -> capability.equals(cap.getText()))
+                .findAny()
+                .map(cap -> cap.getAttribute("href"))
+                .orElse("Not There");
     }
 }

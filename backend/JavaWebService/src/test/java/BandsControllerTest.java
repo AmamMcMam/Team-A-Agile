@@ -1,16 +1,13 @@
 import com.kainos.ea.resources.Band;
 import com.kainos.ea.resources.BandService;
 import com.kainos.ea.resources.BandsController;
-import com.kainos.ea.resources.Role;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
 
-import java.util.List;
-
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertSame;
 
 @RunWith(MockitoJUnitRunner.class)
 public class BandsControllerTest {
@@ -30,6 +27,6 @@ public class BandsControllerTest {
 
         //assert
         Mockito.verify(mockService).getBand(bandID);
-        assertTrue(band == bandObj);
+        assertSame(band, bandObj);
     }
 }
