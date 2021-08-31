@@ -191,6 +191,15 @@
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
                 <version>0.8.6</version>
+                <configuration>
+                    <excludes>
+                        <exclude>com/kainos/ea/WebServiceApplication.class</exclude>
+                        <exclude>com/kainos/ea/WebServiceConfiguration.class</exclude>
+                        <exclude>com/kainos/ea/db/*</exclude>
+                        <exclude>com/kainos/ea/models/*</exclude>
+                        <exclude>com/kainos/ea/services/*</exclude>
+                    </excludes>
+                </configuration>
                 <executions>
                     <execution>
                         <id>prepare-agent</id>
