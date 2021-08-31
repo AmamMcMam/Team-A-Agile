@@ -1,0 +1,22 @@
+.nav-bar{
+    background-color: #113e71;
+}
+
+.footer-style{
+    background-image: url('/images/footer.jpeg'); 
+    background-size: 100% 100%; 
+    width: 100%; 
+    height: 300px;
+}
+
+.card-style{
+    background-color: #ffffff; 
+    border-style: solid; 
+    border-color: #283583; 
+    margin-top: 10%;
+}
+
+.card-row{
+    color: #283583; 
+    margin: auto
+}
