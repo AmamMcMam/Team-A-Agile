@@ -2,7 +2,6 @@ package com.kainos.ea.resources;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class Roles {
 
@@ -14,10 +13,10 @@ public class Roles {
     private String location;
     private int bandID;
     private int capabilityID;
-    private List<JobResponsibility> jobResponsibilities;
+    private List<String> jobResponsibilities;
 
 
-    public Roles(int roleID, String roleName, String roleDesc, String datePosted, String hours, String location, int bandID, int capabilityID, String jobResponsibilitiesIds) {
+    public Roles(int roleID, String roleName, String roleDesc, String datePosted, String hours, String location, int bandID, int capabilityID, String jobResponsibilities) {
         this.roleID = roleID;
         this.roleName = roleName;
         this.roleDesc = roleDesc;
@@ -26,8 +25,8 @@ public class Roles {
         this.location = location;
         this.bandID = bandID;
         this.capabilityID = capabilityID;
-        if (jobResponsibilitiesIds != null) {
-            this.jobResponsibilities = Arrays.asList(jobResponsibilitiesIds.split(",")).stream().map(id -> new JobResponsibility(Integer.parseInt(id))).collect(Collectors.toList());
+        if (jobResponsibilities != null) {
+            this.jobResponsibilities = Arrays.asList(jobResponsibilities.split(","));
         }
     }
 
@@ -95,11 +94,11 @@ public class Roles {
         this.capabilityID = capabilityID;
     }
 
-//    public void setJobResponsibilities(List<Integer> jobResponsibilitiesIds) {
-//        this.jobResponsibilities = jobResponsibilitiesIds.stream().map(id -> new JobResponsibility(id)).collect(Collectors.toList());
-//    }
+    public void setJobResponsibilities(List<String> jobResponsibilities) {
+        this.jobResponsibilities = jobResponsibilities;
+    }
 
-    public List<JobResponsibility> getJobResponsibilities() {
+    public List<String> getJobResponsibilities() {
         return jobResponsibilities;
     }
 }

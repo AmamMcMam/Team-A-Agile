@@ -32,8 +32,7 @@ public class WebService {
             initDBConnection();
         }
         RolesMapper jobRoles = sqlSession.getMapper(RolesMapper.class);
-        List<Roles> roles = jobRoles.viewJobRoles();
-        return roles;
+        return jobRoles.viewJobRoles();
     }
 
     @GET

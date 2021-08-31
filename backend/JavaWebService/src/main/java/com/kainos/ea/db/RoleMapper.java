@@ -5,11 +5,32 @@ import com.kainos.ea.resources.Roles;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 
-import java.util.List;
-
 @Mapper
 public interface RoleMapper {
-    @Select("selectr.roleID, r.roleName, r.bandID, group_concat(rr.responsibilityID) from roles r left join role_responsibilities rr on r.roleID = rr.roleID where r.roleID = #{roleID}")
+    @Select("" +
+            "SELECT " +
+            "r.roleID," +
+            "r.roleName," +
+            "r.roleDesc," +
+            "r.datePosted," +
+            "r.hours," +
+            "r.location," +
+            "r.bandID," +
+            "r.capabilityId," +
+            "group_concat(re.responsibility)" +
+            " FROM " +
+            "roles r" +
+            " LEFT JOIN " +
+            "role_responsibilities rr" +
+            " ON " +
+            "r.roleID = rr.roleId" +
+            " LEFT JOIN " +
+            "responsibilities re" +
+            " ON " +
+            "rr.responsibilityId = re.responsibilityId" +
+            " WHERE r.roleID = #{roleID}" +
+            " GROUP BY " +
+            "r.roleID;")
     Roles getRole(int roleID);
 
     @Select("select bandID, bandName, bandExpectations from band where bandID = #{roleBandId}")
