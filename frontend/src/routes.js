@@ -19,7 +19,8 @@ const api_url = process.env.API_URL;
 app.get('/', async (req, res) => {
     const response = await fetch(api_url+'/api/',{method:'GET',headers:{}})
     const data = await response.json();
-    res.render('layout', {test: data}); 
+    res.render('homePage', {test: data}); 
+
   });
 
 app.get('/job-roles', async (req, res) => {
