@@ -14,4 +14,4 @@ jobs:
       - store_artifacts:
           path: target/my-reports
       - codecov/upload:  
-          file: target/my-reports
+          file: target/my-reports/jacoco.xml
