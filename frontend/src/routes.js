@@ -34,7 +34,7 @@ app.get('/job-roles/:id', async (req, res) => {
     console.log(api_url+'/job-roles/'+id)
     const response = await fetch(api_url+'/job-roles/'+id,{method:'GET',headers:{}})
     const roleData = await response.json();
-    const specResponse = await fetch(api_url+'/job-roles/job-spec/'+id,{method:'GET',headers:{}})
+    const specResponse = await fetch(`${api_url}/job-roles/job-spec/${id}`,{method:'GET',headers:{}})
     const specData = await specResponse.json();
     const bandResponse = await fetch(api_url+'/bands/'+roleData.bandID,{method:'GET',headers:{}})
     const bandData = await bandResponse.json();
