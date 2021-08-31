@@ -9,7 +9,9 @@ jobs:
     steps:
       - checkout:
           path: ~/Team-A-Agile
-      - run: mvn clean install
+      - run: 
+        name: Install
+        command: mvn clean install
       - run: mvn test
       - store_artifacts:
           path: target/my-reports
