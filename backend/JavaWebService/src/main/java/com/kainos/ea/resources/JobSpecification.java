@@ -7,18 +7,20 @@ public class JobSpecification {
     private String datePosted;
     private String hours;
     private String location;
+    private String link;
 
     public JobSpecification() {
     }
 
     public JobSpecification(int roleID, String roleName, String roleDesc,
-                            String datePosted, String hours, String location) {
+                            String datePosted, String hours, String location, String link) {
         this.roleID = roleID;
         this.roleName = roleName;
         this.roleDesc = roleDesc;
         this.datePosted = datePosted;
         this.hours = hours;
         this.location = location;
+        this.link = link;
     }
 
     public int getRoleID() {
@@ -69,5 +71,11 @@ public class JobSpecification {
         this.location = location;
     }
 
+    public String getLink() {
+        return link;
+    }
 
+    public void setLink(String link) {
+        this.link = link;
+    }
 }

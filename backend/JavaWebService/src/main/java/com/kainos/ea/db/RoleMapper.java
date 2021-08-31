@@ -14,6 +14,6 @@ public interface RoleMapper {
     @Select("select bandID, bandName, bandExpectations from band where bandID = #{roleBandId}")
     Band getBand(int roleBandId);
 
-    @Select("select roleID, roleName, roleDesc, datePosted, hours, location from roles where roleID = #{id}")
+    @Select("select roleID, roleName, roleDesc, datePosted, hours, location, link from roles where roleID = #{id}")
     JobSpecification getJobSpecification(int roleID);
 }
