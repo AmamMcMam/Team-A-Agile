@@ -11,7 +11,7 @@ CREATE TABLE `roles` (
   `location` varchar(100) not null,
   `bandID` tinyint NOT NULL,
   `capabilityID` tinyint NOT NULL,
-  'link' varchar(1000) NOT NULL,
+  `link` varchar(1000) NOT NULL,
   PRIMARY KEY (`roleID`),
   CONSTRAINT `band_to_role_FK` FOREIGN KEY (`bandID`) REFERENCES `band` (`bandID`),
   CONSTRAINT `capability_to_role_FK` FOREIGN KEY (`capabilityID`) REFERENCES `capability` (`capabilityID`)
