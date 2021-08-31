@@ -1,13 +1,11 @@
-import com.kainos.ea.resources.Band;
-import com.kainos.ea.resources.BandService;
-import com.kainos.ea.resources.BandsController;
-import com.kainos.ea.resources.Role;
+import com.kainos.ea.resources.*;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
 
+import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.Assert.assertTrue;
@@ -31,5 +29,20 @@ public class BandsControllerTest {
         //assert
         Mockito.verify(mockService).getBand(bandID);
         assertTrue(band == bandObj);
+    }
+    @Test
+    public void controllerReturnsCompetencyElementList(){
+        //arrange
+        BandsController controller = new BandsController(mockService);
+        List<CompetencyElement> competencyElementList = Arrays.asList(new CompetencyElement());
+        int bandID = 1;
+        Mockito.when(mockService.getCompetencyPerBand(bandID)).thenReturn(competencyElementList);
+
+        //act
+        List<CompetencyElement> elements = controller.getCompetencyPerBand(bandID);
+
+        //assert
+        Mockito.verify(mockService).getCompetencyPerBand(bandID);
+        assertTrue(competencyElementList == elements);
     }
 }

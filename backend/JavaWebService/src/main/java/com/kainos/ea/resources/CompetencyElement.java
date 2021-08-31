@@ -21,6 +21,7 @@ public class CompetencyElement {
         this.elementName = elementName;
         this.elementDescription = elementDescription;
     }
+    public CompetencyElement(){}
 
     public int getCompetencyElementID() {
         return competencyElementID;
