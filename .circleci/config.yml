@@ -12,6 +12,6 @@ jobs:
       - run: mvn clean install
       - run: mvn test
       - store_artifacts:
-          path:  target/my-reports
+          path: target/my-reports
       - codecov/upload:  
           file: target/my-reports
