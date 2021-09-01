@@ -22,7 +22,4 @@ public class RoleService {
         return roleMapper.getRole(roleID);
     }
 
-    public Role getJobSpecification(int roleID) {
-        return roleMapper.getJobSpecification(roleID);
-    }
 }

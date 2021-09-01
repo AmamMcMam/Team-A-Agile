@@ -32,18 +32,18 @@ public class JobRolesControllerTest {
         Mockito.verify(mockService).getRoles();
     }
     @Test
-    public void controllerReturnsSameRolesSpecificationsAsServiceProvides(){
+    public void controllerReturnsSameRoleAsServiceProvides(){
         //arrange
         JobRolesController controller = new JobRolesController(mockService);
-        Role roleObj = new Role();
+        Role roleActual = new Role();
         int roleID = 1;
-        Mockito.when(mockService.getJobSpecification(roleID)).thenReturn(roleObj);
+        Mockito.when(mockService.getRole(roleID)).thenReturn(roleActual);
 
         //act
-        Role role = controller.getJobSpecification(roleID);
+        Role roleExpected = controller.getRole(roleID);
 
         //assert
-        assertSame(role, roleObj);
-        Mockito.verify(mockService).getJobSpecification(roleID);
+        assertSame(roleExpected, roleActual);
+        Mockito.verify(mockService).getRole(roleID);
     }
 }

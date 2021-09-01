@@ -26,10 +26,4 @@ public class JobRolesController {
         return service.getRole(roleID);
     }
 
-    @GET
-    @Path("/job-roles/{id}/job-spec")
-    @Produces(MediaType.APPLICATION_JSON)
-    public Role getJobSpecification(@PathParam("id") int roleID) {
-        return service.getJobSpecification(roleID);
-    }
 }
