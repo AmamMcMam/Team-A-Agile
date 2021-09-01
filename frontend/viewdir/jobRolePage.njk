@@ -2,13 +2,13 @@
 
 {% block content %}
     <div class="container">
-        <h3 id="roleName" style="color:#575756">{{specification.roleName}}</h3>
+        <h3 id="roleName" style="color:#575756">{{role.roleName}}</h3>
 
         <div class="row">
             <h6>
-                <div class="col" id="roleDatePosted">Date Posted: {{specification.datePosted}}</div>
-                <div class="col" id="roleHours">{{specification.hours}}</div>
-                <div class="col" id="roleLocation">{{specification.location}}</div>
+                <div class="col" id="roleDatePosted">Date Posted: {{role.datePosted}}</div>
+                <div class="col" id="roleHours">{{role.hours}}</div>
+                <div class="col" id="roleLocation">{{role.location}}</div>
             </h6>
         </div>
 
@@ -20,9 +20,9 @@
             <div class="divider"></div>
             <div class="section">
                 <h5><span style="color:#41679f">Role Description </span></h5>
-                <p id="description">{{specification.roleDesc}}</p>
-                {% if specification.link and specification.link !== "" %}
-                    <a href="{{specification.link}}"
+                <p id="description">{{role.roleDesc}}</p>
+                {% if role.link and role.link !== "" %}
+                    <a href="{{role.link}}"
                         id="specificationLink">View on Sharepoint</a>
                 {% endif %}
             </div>
