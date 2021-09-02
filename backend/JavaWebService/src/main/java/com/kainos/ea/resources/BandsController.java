@@ -21,6 +21,14 @@ public class BandsController {
     public List<Band> getBands () {
         return service.getBands();
     }
+
+    @GET
+    @Path("/competencyNames")
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<CompetencyElement> getCompetencyNames () {
+        return service.getCompetencyNames();
+    }
+
     @GET
     @Path("/bands/{id}")
     @Produces(MediaType.APPLICATION_JSON)

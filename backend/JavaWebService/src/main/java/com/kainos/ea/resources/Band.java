@@ -13,6 +13,10 @@ public class Band{
         this.bandExpectations = bandExpectations;
     }
 
+    public int getBandID() {
+        return bandID;
+    }
+
     public String getBandName() {
         return bandName;
     }

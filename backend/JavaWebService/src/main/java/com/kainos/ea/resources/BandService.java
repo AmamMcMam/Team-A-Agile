@@ -30,4 +30,8 @@ public class BandService {
         return bandMapper.getCompetencyPerBand(bandID);
     }
 
+    public List<CompetencyElement> getCompetencyNames(){
+        return bandMapper.getCompetencyNames();
+    }
+
 }

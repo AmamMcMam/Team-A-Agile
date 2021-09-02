@@ -10,12 +10,15 @@ import java.util.List;
 @Mapper
 public interface BandMapper {
 
-    @Select("select bandName from band;")
+    @Select("select bandName, bandID from band;")
     List<Band> getBands();
 
-    @Select("select competency_element.bandID, competency_element.competencyID, elementName, elementDescription " +
-            "from competency_element join band using(bandID) join competency where band.bandID " +
-            "= #{compBandID} and competency.competencyID = band.bandID")
+    @Select("select competencyID, competencyName from competency")
+    List<CompetencyElement> getCompetencyNames();
+
+    @Select("select competencyElementID, competency_element.bandID, competency_element.competencyID, elementName, elementDescription, competencyName " +
+            "from competency_element join band using(bandID) join competency where " +
+            "band.bandID = #{compBandID} and competency.competencyID = competency_element.competencyID")
     List<CompetencyElement> getCompetencyPerBand(int compBandID);
 
 }
