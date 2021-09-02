@@ -10,7 +10,7 @@ public class CapabilitiesPage extends PageObject{
 
     @FindBy(id = "capTitle") private WebElement title;
 
-    @FindBy(id = "capName") private List<WebElement> capabilities;
+    @FindBy(xpath = "//a[starts-with(@id, 'link-')]") private List<WebElement> capabilities;
 
     public CapabilitiesPage(WebDriver driver) {
         super(driver);

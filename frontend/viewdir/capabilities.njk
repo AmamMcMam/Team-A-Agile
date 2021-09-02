@@ -2,11 +2,11 @@
 
 {% block content %}
     <div class="container">
-        <h5 style="color:#575756"><spam id="capTitle">Capabilities</span></h5>
+        <h5 class="title"><span id="capTitle">Capabilities</span></h5>
         <div class="divider"></div>
         {% for item in items %}
             <div class="section">
-                <h5 style="color:#009fe3"><a id="capName" href="/capabilities/{{item.capabilityID}}">{{item.capability}}</a></h5>
+                <h5 class="list-main-text"><a id="link-{{item.capability}}"href="/capabilities/{{item.capabilityID}}">{{item.capability}}</a></h5>
             </div>
         {% endfor %}
     </div>
