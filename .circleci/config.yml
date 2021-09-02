@@ -12,6 +12,6 @@ jobs:
       - run: mvn clean install
       - run: mvn test
       - store_artifacts:
-          path: target/my-reports
+          path: target/test-coverage-reports
       - codecov/upload:  
-          file: target/my-reports/jacoco.xml
+          file: target/test-coverage-reports/jacoco.xml
