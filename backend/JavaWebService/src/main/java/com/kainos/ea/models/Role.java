@@ -1,4 +1,4 @@
-package com.kainos.ea.resources;
+package com.kainos.ea.models;
 
 public class Role {
     private int roleID;
