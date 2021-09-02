@@ -1,5 +1,10 @@
 package com.kainos.ea.models;
 
+import java.sql.Date;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+
 public class Role {
     private int roleID;
     private String roleName;
@@ -9,6 +14,7 @@ public class Role {
     private String location;
     private int bandID;
     private int capabilityID;
+    private DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
 
     public Role() {}
 
@@ -48,7 +54,9 @@ public class Role {
     }
 
     public String getDatePosted() {
-        return datePosted;
+        LocalDate date = LocalDate.parse(datePosted);
+        String formattedString = date.format(formatter);
+        return formattedString;
     }
 
     public void setDatePosted(String datePosted) {
