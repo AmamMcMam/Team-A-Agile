@@ -37,7 +37,6 @@ app.get('/bands', async (req, res) => {
     const bandData = await response.json();
     console.log({items:bandData});
     res.render('bandPage', {items: bandData}); 
-
 });
 
 app.get('/job-roles/:id', async (req, res) => {
@@ -62,7 +61,6 @@ app.get('/bands/:id/competency', async (req, res) => {
     const competencyNames = await namesResponse.json();
     console.log({competency: competencyData, names: competencyNames})
     res.render('competencyPage', {competency: competencyData, names: competencyNames}); 
-
 });
 
 app.listen(6555, function() { 

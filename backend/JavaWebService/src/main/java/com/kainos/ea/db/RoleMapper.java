@@ -18,5 +18,4 @@ public interface RoleMapper {
 
     @Select("select * from competency_element;")
     List<CompetencyElement> getCompetencies();
-
 }

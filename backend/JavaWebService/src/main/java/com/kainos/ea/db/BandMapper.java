@@ -20,5 +20,4 @@ public interface BandMapper {
             "from competency_element join band using(bandID) join competency where " +
             "band.bandID = #{compBandID} and competency.competencyID = competency_element.competencyID")
     List<CompetencyElement> getCompetencyPerBand(int compBandID);
-
 }

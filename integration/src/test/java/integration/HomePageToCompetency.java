@@ -45,8 +45,4 @@ public class HomePageToCompetency {
         assertEquals(expectedTitle, competencyPage.getTitle());
         return this;
     }
-
-
-
-
 }

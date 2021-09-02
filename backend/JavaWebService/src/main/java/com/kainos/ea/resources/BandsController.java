@@ -43,5 +43,4 @@ public class BandsController {
     {
         return service.getCompetencyPerBand(bandID);
     }
-
 }

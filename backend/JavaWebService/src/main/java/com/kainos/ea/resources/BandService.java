@@ -17,7 +17,6 @@ public class BandService {
         this.bandMapper = bandMapper;
     }
 
-
     public Band getBand(int bandID) {
         return roleMapper.getBand(bandID);
     }
@@ -33,5 +32,4 @@ public class BandService {
     public List<CompetencyElement> getCompetencyNames(){
         return bandMapper.getCompetencyNames();
     }
-
 }
