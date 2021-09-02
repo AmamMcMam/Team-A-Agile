@@ -20,7 +20,6 @@ app.get('/', async (req, res) => {
     const response = await fetch(api_url+'/api/',{method:'GET',headers:{}})
     const data = await response.json();
     res.render('homePage', {test: data}); 
-
   });
 
 app.get('/job-roles', async (req, res) => {
