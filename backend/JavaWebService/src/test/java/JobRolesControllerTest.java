@@ -1,6 +1,6 @@
-import com.kainos.ea.resources.JobRolesController;
-import com.kainos.ea.resources.Role;
-import com.kainos.ea.resources.RoleService;
+import com.kainos.ea.controllers.JobRolesController;
+import com.kainos.ea.models.Role;
+import com.kainos.ea.services.RoleService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;

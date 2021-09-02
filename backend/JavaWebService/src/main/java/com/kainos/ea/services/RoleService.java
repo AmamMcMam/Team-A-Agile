@@ -1,7 +1,8 @@
-package com.kainos.ea.resources;
+package com.kainos.ea.services;
 
 import com.kainos.ea.db.RoleMapper;
 import com.kainos.ea.db.RolesMapper;
+import com.kainos.ea.models.Role;
 
 import java.util.List;
 

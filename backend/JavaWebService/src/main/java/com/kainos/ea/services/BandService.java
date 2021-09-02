@@ -1,9 +1,7 @@
-package com.kainos.ea.resources;
+package com.kainos.ea.services;
 
 import com.kainos.ea.db.RoleMapper;
-import com.kainos.ea.db.RolesMapper;
-
-import java.util.List;
+import com.kainos.ea.models.Band;
 
 public class BandService {
     private Band band;
