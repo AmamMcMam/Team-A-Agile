@@ -1,6 +1,6 @@
 import com.kainos.ea.resources.CapabilitiesController;
 import com.kainos.ea.resources.CapabilitiesService;
-import com.kainos.ea.resources.Capability;
+import com.kainos.ea.models.Capability;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;

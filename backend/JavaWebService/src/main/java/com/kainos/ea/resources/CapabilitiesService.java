@@ -1,8 +1,8 @@
 package com.kainos.ea.resources;
 
 import com.kainos.ea.db.CapabilityMapper;
-import com.kainos.ea.resources.Capability;
-import com.kainos.ea.resources.Role;
+import com.kainos.ea.models.Capability;
+import com.kainos.ea.models.Role;
 import java.util.List;
 
 public class CapabilitiesService {

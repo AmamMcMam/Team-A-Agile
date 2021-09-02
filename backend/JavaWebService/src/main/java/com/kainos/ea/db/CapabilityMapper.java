@@ -1,6 +1,6 @@
 package com.kainos.ea.db;
-import com.kainos.ea.resources.Capability;
-import com.kainos.ea.resources.Role;
+import com.kainos.ea.models.Capability;
+import com.kainos.ea.models.Role;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
