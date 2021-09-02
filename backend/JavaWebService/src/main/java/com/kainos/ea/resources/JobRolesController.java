@@ -25,5 +25,4 @@ public class JobRolesController {
     public Role getRole (@PathParam("id") int roleID) {
         return service.getRole(roleID);
     }
-
 }
