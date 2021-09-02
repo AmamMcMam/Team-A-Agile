@@ -18,10 +18,9 @@ public class CapabilitiesPageStepDefinitions {
     public CapabilitiesPageStepDefinitions employeeViewsCapabilitiesPage() {
         driver.navigate().to(CAPABILITIES_PAGE);
         CapabilitiesPage capsPage= new CapabilitiesPage(driver);
-        assertEquals(capsPage.getTitle(), "Capabilities");
+        assertEquals("Capabilities", capsPage.getTitle());
         return this;
     }
-
 
     @Then("The client clicks on the {} capability")
     public CapabilitiesPageStepDefinitions TheClientClicksOn(String capName) {
@@ -34,9 +33,7 @@ public class CapabilitiesPageStepDefinitions {
     @And("capability has {int} jobs")
     public CapabilitiesPageStepDefinitions capabilityHasResults(int results) {
         JobRolesPage jobRolesPage = new JobRolesPage(driver);
-        assertEquals(jobRolesPage.getResults(), results);
+        assertEquals(results, jobRolesPage.getResults());
         return this;
     }
-
-
 }

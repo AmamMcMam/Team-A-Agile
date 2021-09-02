@@ -48,7 +48,6 @@ public class WebServiceApplication extends Application<WebServiceConfiguration> 
         CapabilityMapper capabilityMapper = sqlSession.getMapper(CapabilityMapper.class);
 
 
-
         RoleService rolesService = new RoleService(rolesMapper, roleMapper);
         BandService bandService = new BandService(roleMapper);
         CapabilitiesService capabilityService = new CapabilitiesService(capabilityMapper);
@@ -57,5 +56,4 @@ public class WebServiceApplication extends Application<WebServiceConfiguration> 
         environment.jersey().register(new JobRolesController(rolesService));
         environment.jersey().register(new CapabilitiesController(capabilityService));
     }
-
 }
