@@ -8,8 +8,8 @@
             {% for item in competency %}
                     {% if item.competencyName == name.competencyName %}
                         <div class="section">
-                            <h3 id="elementName-{{item.competencyElementID}}" style="color:#575756">{{item.elementName}}</h3>
-                            <p><span style="color:#41679f">Description: </span><span id="elementDescription-{{item.competencyElementID}}" style="color:#575756">{{item.elementDescription}}</span></p>
+                            <h3 id="compElementName-{{item.competencyElementID}}" style="color:#575756">{{item.elementName}}</h3>
+                            <p><span style="color:#41679f">Description: </span><span id="compElementDescription-{{item.competencyElementID}}" style="color:#575756">{{item.elementDescription}}</span></p>
                         </div>
                     {% endif %}
             {% endfor %}                  
