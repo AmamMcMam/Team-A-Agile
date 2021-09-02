@@ -1,11 +1,12 @@
 package com.kainos.ea.db;
-import com.kainos.ea.resources.Roles;
+import com.kainos.ea.resources.Role;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 import java.util.List;
 
 @Mapper
 public interface RolesMapper {
+
     @Select("" +
             "SELECT " +
             "r.roleID," +
@@ -16,7 +17,7 @@ public interface RolesMapper {
             "r.location," +
             "r.bandID," +
             "r.capabilityId," +
-            "group_concat(re.responsibility)" +
+            "group_concat(re.responsibility) as jobResponsibilities" +
             " FROM " +
             "roles r" +
             " LEFT JOIN " +
@@ -29,6 +30,5 @@ public interface RolesMapper {
             "rr.responsibilityId = re.responsibilityId" +
             " GROUP BY " +
             "r.roleID;")
-    List<Roles> viewJobRoles();
-
+    List<Role> viewJobRoles();
 }

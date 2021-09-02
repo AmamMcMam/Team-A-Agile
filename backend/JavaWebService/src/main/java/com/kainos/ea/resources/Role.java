@@ -3,8 +3,7 @@ package com.kainos.ea.resources;
 import java.util.Arrays;
 import java.util.List;
 
-public class Roles {
-
+public class Role {
     private int roleID;
     private String roleName;
     private String roleDesc;
@@ -15,8 +14,19 @@ public class Roles {
     private int capabilityID;
     private List<String> jobResponsibilities;
 
+    public Role() {}
 
-    public Roles(int roleID, String roleName, String roleDesc, String datePosted, String hours, String location, int bandID, int capabilityID, String jobResponsibilities) {
+    public Role(
+            int roleID,
+            String roleName,
+            String roleDesc,
+            String datePosted,
+            String hours,
+            String location,
+            int bandID,
+            int capabilityID,
+            String jobResponsibilities
+    ) {
         this.roleID = roleID;
         this.roleName = roleName;
         this.roleDesc = roleDesc;
@@ -94,8 +104,8 @@ public class Roles {
         this.capabilityID = capabilityID;
     }
 
-    public void setJobResponsibilities(List<String> jobResponsibilities) {
-        this.jobResponsibilities = jobResponsibilities;
+    public void setJobResponsibilities(String jobResponsibilities) {
+        this.jobResponsibilities = Arrays.asList(jobResponsibilities.split(","));
     }
 
     public List<String> getJobResponsibilities() {

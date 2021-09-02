@@ -1,7 +1,7 @@
 package com.kainos.ea.db;
 
 import com.kainos.ea.resources.Band;
-import com.kainos.ea.resources.Roles;
+import com.kainos.ea.resources.Role;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 
@@ -17,7 +17,7 @@ public interface RoleMapper {
             "r.location," +
             "r.bandID," +
             "r.capabilityId," +
-            "group_concat(re.responsibility)" +
+            "group_concat(re.responsibility) as jobResponsibilities" +
             " FROM " +
             "roles r" +
             " LEFT JOIN " +
@@ -31,7 +31,7 @@ public interface RoleMapper {
             " WHERE r.roleID = #{roleID}" +
             " GROUP BY " +
             "r.roleID;")
-    Roles getRole(int roleID);
+    Role getRole(int roleID);
 
     @Select("select bandID, bandName, bandExpectations from band where bandID = #{roleBandId}")
     Band getBand(int roleBandId);
