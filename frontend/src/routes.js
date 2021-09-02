@@ -39,7 +39,6 @@ app.get('/job-roles/:id', async (req, res) => {
     console.log({role: roleData, band: bandData})
     res.render('jobRolePage', {role: roleData, band: bandData}); 
 
-    console.log(api_url+`/job-roles/${id}/job-spec/`)
 });
 
 app.listen(6555, function() { 
