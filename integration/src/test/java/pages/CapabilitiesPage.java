@@ -8,7 +8,7 @@ import java.util.List;
 
 public class CapabilitiesPage extends PageObject{
 
-    @FindBy(id = "capTitle") private WebElement Title;
+    @FindBy(id = "capTitle") private WebElement title;
 
     @FindBy(id = "capName") private List<WebElement> capabilities;
 
@@ -17,16 +17,12 @@ public class CapabilitiesPage extends PageObject{
     }
 
     public String getTitle() {
-        System.out.println(Title.getText());
-        return Title.getText(); }
+        return title.getText(); }
 
     public boolean isCapability (String capability) {
-        for (WebElement cap : capabilities) {
-            if (cap.getText().equals(capability)) {
-                return true;
-            }
-        }
-        return false;
+        return capabilities.stream()
+                .map(WebElement::getText)
+                .anyMatch(capability::equals);
     }
 
     public String getCapabilityRolesLink(String capability) {
