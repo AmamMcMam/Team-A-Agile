@@ -1,0 +1,19 @@
+{% extends "template.njk" %}
+
+{% block content %}
+    <div class="container">
+    <h1 id="compTitle"style="color:#575756">Competencies</h1>
+    {% for name in names %}
+        <h3 id="competencyName-{{name.competencyID}}" style="color:#575756">{{name.competencyName}}</h3>
+            {% for item in competency %}
+                    {% if item.competencyName == name.competencyName %}
+                        <div class="section">
+                            <h3 id="elementName-{{item.competencyElementID}}" style="color:#575756">{{item.elementName}}</h3>
+                            <p><span style="color:#41679f">Description: </span><span id="elementDescription-{{item.competencyElementID}}" style="color:#575756">{{item.elementDescription}}</span></p>
+                        </div>
+                    {% endif %}
+            {% endfor %}                  
+    {% endfor %}  
+
+    </div>
+{% endblock %}
