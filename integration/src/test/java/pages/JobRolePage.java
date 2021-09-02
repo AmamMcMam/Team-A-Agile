@@ -42,16 +42,16 @@ public class JobRolePage extends PageObject {
         return roleName.getText();
     }
 
-    public WebElement getRoleDatePosted() {
-        return roleDatePosted;
+    public String getRoleDatePosted() {
+        return roleDatePosted.getText();
     }
 
-    public WebElement getRoleHours() {
-        return roleHours;
+    public String getRoleHours() {
+        return roleHours.getText();
     }
 
-    public WebElement getRoleLocation() {
-        return roleLocation;
+    public String getRoleLocation() {
+        return roleLocation.getText();
     }
 
     public String getSpecificationLink() {
