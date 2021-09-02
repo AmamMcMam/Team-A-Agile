@@ -7,14 +7,8 @@ public class CompetencyElement {
     private int competencyID;
     private int compBandID;
     private String competencyName;
-    public CompetencyElement(int competencyElementID, int competencyID, String elementName,
-                             int compBandID, String elementDescription){
-        this.competencyElementID = competencyElementID;
-        this.competencyID = competencyID;
-        this.elementName = elementName;
-        this.compBandID = compBandID;
-        this.elementDescription = elementDescription;
-    }
+
+    //for getting the competencies per band
     public CompetencyElement(int competencyElementID, int competencyID, String elementName,
                              int compBandID, String elementDescription, String competencyName){
         this.competencyElementID = competencyElementID;
@@ -25,13 +19,6 @@ public class CompetencyElement {
         this.competencyName = competencyName;
     }
 
-    public CompetencyElement(int competencyElementID, int compBandID, int competencyID, String elementName, String elementDescription){
-        this.competencyElementID = competencyElementID;
-        this.compBandID = compBandID;
-        this.competencyID = competencyID;
-        this.elementName = elementName;
-        this.elementDescription = elementDescription;
-    }
     //for getting the competency names
     public CompetencyElement(int competencyID, String competencyName){
         this.competencyID = competencyID;

@@ -16,6 +16,4 @@ public interface RoleMapper {
     @Select("select bandID, bandName, bandExpectations from band where bandID = #{roleBandId}")
     Band getBand(int roleBandId);
 
-    @Select("select * from competency_element;")
-    List<CompetencyElement> getCompetencies();
 }
