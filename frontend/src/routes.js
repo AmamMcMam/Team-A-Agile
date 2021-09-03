@@ -1,10 +1,8 @@
 const express = require('express')
 const nunjucks = require('nunjucks');
 const path = require('path');
-// console.log(path.join(__dirname, "public"))
-
-
-require('dotenv').config()
+const jobs = require('./jobRoles.js')
+const caps = require('./capabilities.js')
 
 const app = express()
 app.set('view engine', 'njk');
@@ -19,25 +17,24 @@ app.get('/', async (req, res) => {
     res.render('homePage'); 
   });
 
-const jobs = require('./jobRoles')
 app.get('/job-roles', async (req, res) => {
-    res.render('jobRolesPage', {items: await jobs.getJobRoles()}); 
+    const results = await jobs.getJobRoles();
+    res.render('jobRolesPage', {items: results}); 
 });
 
 app.get('/job-roles/:id', async (req, res) => {
     const results = await jobs.getJobRole(req.params.id);
-    res.render('jobRolePage', {role: results[0], band: results[1]});
+    res.render('jobRolePage', {role: results.roleData, band: results.bandData});
 });
 
-const caps = require('./capabilities')
 app.get('/capabilities', async (req, res) => {
-    res.render('capabilities', {items: await caps.getCapabilities()});
+    const results = await caps.getCapabilities()
+    res.render('capabilities', {items: results});
 });
 
 app.get('/capabilities/:id', async (req, res) => {
-    const id = req.params.id;
-    console.log(await caps.getCapabilityRoles(id));
-    res.render('jobRolesPage', {items: await caps.getCapabilityRoles(req.params.id)}); 
+    const results = await caps.getCapabilityRoles(req.params.id);
+    res.render('jobRolesPage', {items: results}); 
 });
 
 app.listen(6555, function() {

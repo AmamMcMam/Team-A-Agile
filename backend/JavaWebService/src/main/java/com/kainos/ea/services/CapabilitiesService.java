@@ -1,4 +1,4 @@
-package com.kainos.ea.resources;
+package com.kainos.ea.services;
 
 import com.kainos.ea.db.CapabilityMapper;
 import com.kainos.ea.models.Capability;

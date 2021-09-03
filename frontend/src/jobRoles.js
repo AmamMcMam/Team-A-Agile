@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 const fetch = require('node-fetch')
 const api_url = process.env.API_URL;
 
@@ -11,5 +13,5 @@ exports.getJobRole = async (id) => {
     const roleData = await response.json();
     const bandResponse = await fetch(`${api_url}/bands/${roleData.bandID}`,{method:'GET',headers:{}})
     const bandData = await bandResponse.json();
-    return [roleData, bandData];
+    return {roleData, bandData};
 }
