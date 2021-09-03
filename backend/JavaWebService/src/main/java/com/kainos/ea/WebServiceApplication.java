@@ -1,4 +1,7 @@
 package com.kainos.ea;
+import com.kainos.ea.controllers.BandsController;
+import com.kainos.ea.controllers.JobRolesController;
+import com.kainos.ea.db.BandMapper;
 import com.kainos.ea.db.CapabilityMapper;
 import com.kainos.ea.db.RoleMapper;
 import com.kainos.ea.db.RolesMapper;
@@ -49,15 +52,17 @@ public class WebServiceApplication extends Application<WebServiceConfiguration> 
         // Register resources
         RolesMapper rolesMapper = sqlSession.getMapper(RolesMapper.class);
         RoleMapper roleMapper = sqlSession.getMapper(RoleMapper.class);
+        BandMapper bandMapper = sqlSession.getMapper(BandMapper.class);
         CapabilityMapper capabilityMapper = sqlSession.getMapper(CapabilityMapper.class);
 
 
         RoleService rolesService = new RoleService(rolesMapper, roleMapper);
-        BandService bandService = new BandService(roleMapper);
+        BandService bandService = new BandService(roleMapper, bandMapper);
         CapabilitiesService capabilityService = new CapabilitiesService(capabilityMapper);
 
         environment.jersey().register(new BandsController(bandService));
         environment.jersey().register(new JobRolesController(rolesService));
         environment.jersey().register(new CapabilitiesController(capabilityService));
+
     }
 }

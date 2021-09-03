@@ -1,0 +1,22 @@
+{% extends "template.njk" %}
+
+{% block content %}
+    <div class="container">
+    {% if competency|length %}
+        <h1 id="compTitle" class="title-grey">Competencies</h1>
+        {% for name in names %}
+            <h3 id="competencyName-{{name.competencyID}}" class="title-grey">{{name.competencyName}}</h3>
+            {% for item in competency %}
+                {% if item.competencyName == name.competencyName %}
+                    <div class="section">
+                    <h3 id="compElementName-{{item.competencyElementID}}" class="sub-heading-blue">{{item.elementName}}</h3>
+                    <p><span>Description: </span><span id="compElementDescription-{{item.competencyElementID}}">{{item.elementDescription}}</span></p>
+                    </div>
+                {% endif %}
+            {% endfor %}    
+        {% endfor %}
+    {% else %}
+        <p><span>There are no competencies for this band.</span></p>
+    {% endif %}             
+    </div>
+{% endblock %}

@@ -13,6 +13,10 @@ public class Band{
         this.bandExpectations = bandExpectations;
     }
 
+    public int getBandID() {
+        return bandID;
+    }
+
     public String getBandName() {
         return bandName;
     }
@@ -24,5 +28,4 @@ public class Band{
     public String getBandExpectations() {
         return bandExpectations;
     }
-
 }
