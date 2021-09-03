@@ -9,16 +9,16 @@ public class Role {
     private int roleID;
     private String roleName;
     private String roleDesc;
-    private String datePosted;
+    private LocalDate datePosted;
     private String hours;
     private String location;
     private int bandID;
     private int capabilityID;
-    private DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+    private static final DateTimeFormatter FORMATTER = DateTimeFormatter.ofPattern("dd-MM-yyyy");
 
     public Role() {}
 
-    public Role(int roleID, String roleName, String roleDesc, String datePosted, String hours, String location, int bandID, int capabilityID) {
+    public Role(int roleID, String roleName, String roleDesc, LocalDate datePosted, String hours, String location, int bandID, int capabilityID) {
         this.roleID = roleID;
         this.roleName = roleName;
         this.roleDesc = roleDesc;
@@ -54,12 +54,11 @@ public class Role {
     }
 
     public String getDatePosted() {
-        LocalDate date = LocalDate.parse(datePosted);
-        String formattedString = date.format(formatter);
+        String formattedString = datePosted.format(FORMATTER);
         return formattedString;
     }
 
-    public void setDatePosted(String datePosted) {
+    public void setDatePosted(LocalDate datePosted) {
         this.datePosted = datePosted;
     }
 
