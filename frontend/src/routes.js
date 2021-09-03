@@ -35,31 +35,25 @@ app.get('/job-roles', async (req, res) => {
 app.get('/bands', async (req, res) => {
     const response = await fetch(api_url+'bands',{method:'GET',headers:{}})
     const bandData = await response.json();
-    console.log({items:bandData});
     res.render('bandPage', {items: bandData}); 
 });
 
 app.get('/job-roles/:id', async (req, res) => {
     var id = req.params.id;
-    console.log(api_url+'job-roles/'+id)
     const response = await fetch(api_url+'job-roles/'+id,{method:'GET',headers:{}})
     const roleData = await response.json();
     const bandResponse = await fetch(api_url+'bands/'+roleData.bandID,{method:'GET',headers:{}})
     const bandData = await bandResponse.json();
-    console.log({role: roleData, band: bandData})
     res.render('jobRolePage', {role: roleData, band: bandData}); 
 
 });
 
 app.get('/bands/:id/competency', async (req, res) => {
     var id = req.params.id;
-    console.log(id)
-    console.log(api_url+'bands/'+id+'/competency')
     const response = await fetch(api_url+'bands/'+id+'/competency',{method:'GET',headers:{}})
     const competencyData = await response.json();
     const namesResponse = await fetch(api_url+'competencyNames',{method:'GET',headers:{}})
     const competencyNames = await namesResponse.json();
-    console.log({competency: competencyData, names: competencyNames})
     res.render('competencyPage', {competency: competencyData, names: competencyNames}); 
 });
 
