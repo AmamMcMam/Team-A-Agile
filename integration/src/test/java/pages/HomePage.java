@@ -9,10 +9,13 @@ public class HomePage extends PageObject{
     public HomePage(WebDriver driver){super(driver);}
 
     @FindBy(id = "band-link") private WebElement bandLink;
+    @FindBy(id = "capability-link") private WebElement capLink;
 
     public String getBandLink(){
         return bandLink.getAttribute("href");
     }
-
-
+   
+    public String getCapLink() {
+        return capLink.getAttribute("href");
+    }
 }

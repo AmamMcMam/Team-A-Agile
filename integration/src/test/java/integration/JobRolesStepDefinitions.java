@@ -30,7 +30,7 @@ public class JobRolesStepDefinitions {
                 totalResults == amountOfJobs);
 
         assertEquals(jobRolesPage.getRoleName(), "Product Principal");
-        assertEquals(jobRolesPage.getDate(), "2021-07-13");
+        assertEquals(jobRolesPage.getDate(), "13-07-2021");
         assertEquals(jobRolesPage.getLocation(), "Birmingham");
 
     }
