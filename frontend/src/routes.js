@@ -3,6 +3,7 @@ const nunjucks = require('nunjucks');
 const path = require('path');
 const jobs = require('./jobRoles.js')
 const caps = require('./capabilities.js')
+const bands = require('./bands.js')
 
 const app = express()
 app.set('view engine', 'njk');
@@ -23,9 +24,8 @@ app.get('/job-roles', async (req, res) => {
 });
 
 app.get('/bands', async (req, res) => {
-    const response = await fetch(api_url+'/bands',{method:'GET',headers:{}})
-    const bandData = await response.json();
-    res.render('bandPage', {items: bandData}); 
+    const results = await bands.getBands();
+    res.render('bandPage', {items: results}); 
 });
 
 app.get('/job-roles/:id', async (req, res) => {
@@ -44,12 +44,9 @@ app.get('/capabilities/:id', async (req, res) => {
 });
 
 app.get('/bands/:id/competency', async (req, res) => {
-    var id = req.params.id;
-    const response = await fetch(api_url+`/bands/${id}/competency`,{method:'GET',headers:{}})
-    const competencyData = await response.json();
-    const namesResponse = await fetch(api_url+'/competencyNames',{method:'GET',headers:{}})
-    const competencyNames = await namesResponse.json();
-    res.render('competencyPage', {competency: competencyData, names: competencyNames}); 
+    const results = await bands.getCompetenciesPerBand(req.params.id);    
+    res.render('competencyPage', {competency: results.competencyData, names: results.competencyNames}); 
+
 });
 
 app.listen(6555, function() { 
