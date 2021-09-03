@@ -12,6 +12,9 @@ public class JobRolePage extends PageObject {
     @FindBy(id = "roleName")
     private WebElement roleName;
 
+    @FindBy(id = "bandName")
+    private WebElement bandName;
+
     @FindBy(id = "responsibilityTitle") private WebElement responsibilityTitle;
 
     @FindBy(xpath = "//li") private List<WebElement> listItem;
@@ -30,6 +33,14 @@ public class JobRolePage extends PageObject {
 
     public JobRolePage(WebDriver driver) {
         super(driver);
+    }
+
+    public String getHeading() {
+        return roleName.getText();
+    }
+
+    public String getBandName() {
+        return bandName.getText();
     }
 
     public String getRespTitle() { return responsibilityTitle.getText();}
