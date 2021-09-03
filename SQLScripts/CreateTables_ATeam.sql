@@ -2,7 +2,7 @@ CREATE DATABASE Kainos_A;
 
 use Kainos_A;
 
-CREATE TABLE `role` (
+CREATE TABLE `roles` (
   `roleID` smallint NOT NULL AUTO_INCREMENT,
   `roleName` varchar(100) NOT NULL,
   `roleDesc` text NOT NULL,
@@ -11,6 +11,7 @@ CREATE TABLE `role` (
   `location` varchar(100) not null,
   `bandID` tinyint NOT NULL,
   `capabilityID` tinyint NOT NULL,
+  `link` varchar(1000),
   PRIMARY KEY (`roleID`),
   CONSTRAINT `band_to_role_FK` FOREIGN KEY (`bandID`) REFERENCES `band` (`bandID`),
   CONSTRAINT `capability_to_role_FK` FOREIGN KEY (`capabilityID`) REFERENCES `capability` (`capabilityID`)
