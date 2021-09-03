@@ -18,6 +18,15 @@
 
 .card-row{
     color: #283583; 
+    margin: auto;
+}
+
+.sub-heading-blue{
+    color:#41679f;
+}
+
+.title-grey{
+    color:#575756;
     margin: auto
 }
 
