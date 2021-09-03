@@ -8,7 +8,7 @@ public class HomePage extends PageObject{
 
     public HomePage(WebDriver driver){super(driver);}
 
-    @FindBy(id = "bandLink") private WebElement bandLink;
+    @FindBy(id = "band-link") private WebElement bandLink;
 
     public String getBandLink(){
         return bandLink.getAttribute("href");
