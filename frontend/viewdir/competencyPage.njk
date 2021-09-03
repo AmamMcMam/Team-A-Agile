@@ -5,7 +5,7 @@
     {% if competency|length %}
         <h1 id="compTitle" class="title-grey">Competencies</h1>
         {% for name in names %}
-            <h3 id="competencyName-{{name.competencyID}}" class="class="title-grey">{{name.competencyName}}</h3>
+            <h3 id="competencyName-{{name.competencyID}}" class="title-grey">{{name.competencyName}}</h3>
             {% for item in competency %}
                 {% if item.competencyName == name.competencyName %}
                     <div class="section">
