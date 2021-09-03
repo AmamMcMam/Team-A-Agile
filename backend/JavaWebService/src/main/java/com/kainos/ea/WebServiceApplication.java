@@ -52,5 +52,4 @@ public class WebServiceApplication extends Application<WebServiceConfiguration> 
         environment.jersey().register(new BandsController(bandService));
         environment.jersey().register(new JobRolesController(rolesService));
     }
-
 }
