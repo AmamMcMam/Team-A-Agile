@@ -7,7 +7,7 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertSame;
 
 @RunWith(MockitoJUnitRunner.class)
 public class BandsControllerTest {
@@ -27,6 +27,6 @@ public class BandsControllerTest {
 
         //assert
         Mockito.verify(mockService).getBand(bandID);
-        assertTrue(band == bandObj);
+        assertSame(band, bandObj);
     }
 }
