@@ -22,13 +22,17 @@ public class JobRoleStepDefinitions {
     @When("I select a role")
     public void selectJobRole() {
         JobRolesPage jobRolesPage = new JobRolesPage(driver);
-        jobRolesPage.clickJobRole();
+        jobRolesPage.clickSecondRoleOnPage();
     }
 
-    @Then("I can view the role page")
+    @Then("I can view the role page on Sharepoint")
     public void viewJobRole() {
         JobRolePage jobRolePage = new JobRolePage(driver);
         assertEquals(jobRolePage.getRespTitle(), "Role Responsibilities");
         assertTrue(jobRolePage.getResponsibility() > 1);
+        assertEquals(jobRolePage.getHeading(), "Solutions Architect");
+        assertEquals(jobRolePage.getBandName(), "Apprentice");
+        assertEquals(jobRolePage.getSpecificationLink(), "https://kainossoftwareltd.sharepoint.com/people/Job%20Specifications/Forms/AllItems.aspx?id=%2Fpeople%2FJob%20Specifications%2FEngineering%2FJob%20Profile%20%2D%20Solution%20Architect%20%28Manager%29%2Epdf&parent=%2Fpeople%2FJob%20Specifications%2FEngineering&p=true&originalPath=aHR0cHM6Ly9rYWlub3Nzb2Z0d2FyZWx0ZC5zaGFyZXBvaW50LmNvbS86YjovZy9wZW9wbGUvRVNwcDU2Zlp5cmhLaTZ1Q3V3cHNoRHdCM25tbzFCTWtiUUtZRFhiTkhDaV9zdz9ydGltZT1tcHlFbzJSczJVZw");
+        jobRolePage.clickSharepointLink();
     }
 }

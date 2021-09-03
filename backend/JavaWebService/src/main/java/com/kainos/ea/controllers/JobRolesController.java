@@ -1,4 +1,7 @@
-package com.kainos.ea.resources;
+package com.kainos.ea.controllers;
+
+import com.kainos.ea.models.Role;
+import com.kainos.ea.services.RoleService;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
