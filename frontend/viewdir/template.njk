@@ -2,22 +2,43 @@
 <html lang="en"> 
 <head> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-        <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-</head> 
-
-<body>
-    <nav style="background-color: #113e71" class="z-depth-3">
-        <div class="nav-wrapper">
-        <a href="#" class="brand-logo"><img src="/images/kainos.png" alt="Kainos" height="50px"></a>
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li><a href="/">Home</a></li>
-            <li><a href="#">Sign In</a></li>
-        </ul>
-        </div>
-    </nav>
-    {% block content %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+    <link rel="icon" href="/images/favicon-32x32.png" type="image/png" sizes="32x32">
+    {% block head %}
     {% endblock %}
+</head> 
+<body>
+    <header>
+        <nav class="z-depth-3 nav-bar">
+            <div class="nav-wrapper">
+            <a href="/" class="brand-logo"><img src="/images/kainos.png" alt="Kainos" height="50px"></a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="/">Home</a></li>
+            </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+    <footer class="page-footer footer-style">
+        <div class="container">
+            <div class="footer__nav-column col-12 col-md-3">
+                <h6 class="white-text">Follow Us</h6>
+                <ul class="footer__nav-list list-inline">
+                    <li>
+                        <a href="https://www.facebook.com/KainosSoftware/" class="grey-text text-lighten-3"><i class="fa fa-facebook-square fa-2x"></i></a>
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com/company/kainos/" class="grey-text text-lighten-3"><i class="fa fa-linkedin-square fa-2x"></i></a>
+                    </li>
+                </ul>
+                <div class="divider"></div>
+                <img src="/images/kainos.png" alt="Kainos" height="30px">
+            </div>
+        </div>
+    </footer>
 </body>
-{% block script %}
-{% endblock %}

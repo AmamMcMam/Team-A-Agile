@@ -1,6 +1,6 @@
-import com.kainos.ea.resources.JobRolesController;
-import com.kainos.ea.resources.Role;
-import com.kainos.ea.resources.RoleService;
+import com.kainos.ea.controllers.JobRolesController;
+import com.kainos.ea.models.Role;
+import com.kainos.ea.services.RoleService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
@@ -9,7 +9,7 @@ import org.mockito.junit.MockitoJUnitRunner;
 
 import java.util.List;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertSame;
 
 @RunWith(MockitoJUnitRunner.class)
 public class JobRolesControllerTest {
@@ -27,7 +27,22 @@ public class JobRolesControllerTest {
         List<Role> roles = controller.getJobRoles();
 
         //assert
-        assertTrue(roles == roleList);
+        assertSame(roles, roleList);
         Mockito.verify(mockService).getRoles();
+    }
+    @Test
+    public void controllerReturnsSameRoleAsServiceProvides(){
+        //arrange
+        JobRolesController controller = new JobRolesController(mockService);
+        Role roleActual = new Role();
+        int roleID = 1;
+        Mockito.when(mockService.getRole(roleID)).thenReturn(roleActual);
+
+        //act
+        Role roleExpected = controller.getRole(roleID);
+
+        //assert
+        assertSame(roleExpected, roleActual);
+        Mockito.verify(mockService).getRole(roleID);
     }
 }

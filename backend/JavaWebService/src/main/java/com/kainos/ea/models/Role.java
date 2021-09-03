@@ -1,18 +1,25 @@
-package com.kainos.ea.resources;
+package com.kainos.ea.models;
+
+import java.sql.Date;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public class Role {
     private int roleID;
     private String roleName;
     private String roleDesc;
-    private String datePosted;
+    private LocalDate datePosted;
     private String hours;
     private String location;
     private int bandID;
     private int capabilityID;
+    private String link;
+    private static final DateTimeFormatter FORMATTER = DateTimeFormatter.ofPattern("dd-MM-yyyy");
 
     public Role() {}
 
-    public Role(int roleID, String roleName, String roleDesc, String datePosted, String hours, String location, int bandID, int capabilityID) {
+    public Role(int roleID, String roleName, String roleDesc, LocalDate datePosted, String hours, String location, int bandID, int capabilityID, String link) {
         this.roleID = roleID;
         this.roleName = roleName;
         this.roleDesc = roleDesc;
@@ -21,6 +28,7 @@ public class Role {
         this.location = location;
         this.bandID = bandID;
         this.capabilityID = capabilityID;
+        this.link = link;
     }
 
     public int getRoleID() {
@@ -48,10 +56,11 @@ public class Role {
     }
 
     public String getDatePosted() {
-        return datePosted;
+        String formattedString = datePosted.format(FORMATTER);
+        return formattedString;
     }
 
-    public void setDatePosted(String datePosted) {
+    public void setDatePosted(LocalDate datePosted) {
         this.datePosted = datePosted;
     }
 
@@ -85,5 +94,13 @@ public class Role {
 
     public void setCapabilityID(int capabilityID) {
         this.capabilityID = capabilityID;
+    }
+
+    public String getLink() {
+        return link;
+    }
+
+    public void setLink(String link) {
+        this.link = link;
     }
 }
