@@ -1,4 +1,7 @@
-import com.kainos.ea.resources.*;
+import com.kainos.ea.controllers.BandsController;
+import com.kainos.ea.models.Band;
+import com.kainos.ea.models.CompetencyElement;
+import com.kainos.ea.services.BandService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;

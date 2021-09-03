@@ -1,4 +1,8 @@
-package com.kainos.ea.resources;
+package com.kainos.ea.controllers;
+
+import com.kainos.ea.models.Band;
+import com.kainos.ea.services.BandService;
+import com.kainos.ea.models.CompetencyElement;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;

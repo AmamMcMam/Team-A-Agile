@@ -1,7 +1,9 @@
-package com.kainos.ea.resources;
+package com.kainos.ea.services;
 
 import com.kainos.ea.db.BandMapper;
 import com.kainos.ea.db.RoleMapper;
+import com.kainos.ea.models.Band;
+import com.kainos.ea.models.CompetencyElement;
 
 
 import java.util.List;

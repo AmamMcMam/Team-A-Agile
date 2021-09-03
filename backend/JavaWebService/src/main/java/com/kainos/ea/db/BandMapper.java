@@ -1,7 +1,7 @@
 package com.kainos.ea.db;
 
-import com.kainos.ea.resources.Band;
-import com.kainos.ea.resources.CompetencyElement;
+import com.kainos.ea.models.Band;
+import com.kainos.ea.models.CompetencyElement;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 
