@@ -1,0 +1,16 @@
+{% extends "template.njk" %}
+
+{% block content %}
+    <div class="container">
+        <h5 class="title"><span id="resultsHeader">{{items.length}}
+            </span>{% if items.length === 1 %} result{% else %} results{% endif %}</span>
+        </h5>
+        <div class="divider"></div>
+        {% for item in items %}
+            <div class="section">
+                <h5 class="list-main-text"><a id="role-{{item.roleID}}" href="/job-roles/{{item.roleID}}">{{item.roleName}}</a></h5>
+                <p class="list-sub-text"><span id="location-{{item.roleID}}">{{item.location}}</span> | Posted <span id="date-{{item.roleID}}">{{item.datePosted}}</span></p>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

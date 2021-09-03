@@ -1,0 +1,17 @@
+version: 2.1
+orbs:
+  codecov: codecov/codecov@1.2.5
+jobs:
+  build:
+    docker:
+      - image: circleci/openjdk:stretch
+    working_directory: ~/Team-A-Agile/backend/JavaWebService
+    steps:
+      - checkout:
+          path: ~/Team-A-Agile
+      - run: mvn clean install
+      - run: mvn test
+      - store_artifacts:
+          path: target/test-coverage-reports
+      - codecov/upload:  
+          file: target/test-coverage-reports/jacoco.xml
