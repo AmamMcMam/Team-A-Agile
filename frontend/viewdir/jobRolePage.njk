@@ -2,7 +2,30 @@
 
 {% block content %}
     <div class="container">
-        <h3 id="roleName" style="color:#575756">{{role.roleName}}</h3>
-        <h5><span style="color:#41679f">Band Level: </span><span id="bandName" style="color:#575756">{{band.bandName}}</span></h5>
+        <h3 id="roleName" class="title-grey">{{role.roleName}}</h3>
+
+        <div class="row">
+            <h6>
+                <div class="col" id="roleDatePosted">Date Posted: {{role.datePosted}}</div>
+                <div class="col" id="roleHours">{{role.hours}}</div>
+                <div class="col" id="roleLocation">{{role.location}}</div>
+            </h6>
+        </div>
+
+        <div class="divider"></div>
+
+        <h5><span class="sub-heading-blue">Band Level: </span><span id="bandName" class="title-grey">{{band.bandName}}</span></h5>
+
+        <div class="description">
+            <div class="divider"></div>
+            <div class="section">
+                <h5><span class="sub-heading-blue">Role Description </span></h5>
+                <p id="description">{{role.roleDesc}}</p>
+                {% if role.link and role.link !== "" %}
+                    <a href="{{role.link}}"
+                        id="specificationLink">View on Sharepoint</a>
+                {% endif %}
+            </div>
+        </div>
     </div>
 {% endblock %}
