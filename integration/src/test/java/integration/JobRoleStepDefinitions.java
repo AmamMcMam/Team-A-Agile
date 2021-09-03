@@ -28,7 +28,7 @@ public class JobRoleStepDefinitions {
     @Then("I can view the role page")
     public void viewJobRole() {
         JobRolePage jobRolePage = new JobRolePage(driver);
-        assertEquals(jobRolePage.getHeading(), "Product Principal");
-        assertEquals(jobRolePage.getBandName(), "Apprentice");
+        assertEquals(jobRolePage.getRespTitle(), "Role Responsibilities");
+        assertTrue(jobRolePage.getResponsibility() > 1);
     }
 }

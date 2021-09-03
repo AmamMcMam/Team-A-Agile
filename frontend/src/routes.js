@@ -19,7 +19,7 @@ const api_url = process.env.API_URL;
 
 // Add routes
 app.get('/', async (req, res) => {
-    const response = await fetch(api_url+'api/',{method:'GET',headers:{}})
+    const response = await fetch(api_url,{method:'GET',headers:{}})
     const data = await response.json();
     res.render('homePage', {test: data}); 
 
