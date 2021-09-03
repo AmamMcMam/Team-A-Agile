@@ -20,5 +20,4 @@
         <mapper class="com.kainos.ea.db.RoleMapper"/>
         <mapper class="com.kainos.ea.db.CapabilityMapper"/>
     </mappers>
-
 </configuration>

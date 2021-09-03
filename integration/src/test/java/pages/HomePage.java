@@ -6,7 +6,7 @@ import org.openqa.selenium.support.FindBy;
 
 public class HomePage extends PageObject{
 
-    @FindBy(id = "capLink") private WebElement capLink;
+    @FindBy(id = "capability-link") private WebElement capLink;
 
     public HomePage(WebDriver driver) {
         super(driver);

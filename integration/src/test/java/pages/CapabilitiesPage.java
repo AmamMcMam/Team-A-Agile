@@ -8,7 +8,7 @@ import java.util.List;
 
 public class CapabilitiesPage extends PageObject{
 
-    @FindBy(id = "capTitle") private WebElement title;
+    @FindBy(id = "capability-title") private WebElement title;
 
     @FindBy(xpath = "//a[starts-with(@id, 'link-')]") private List<WebElement> capabilities;
 
