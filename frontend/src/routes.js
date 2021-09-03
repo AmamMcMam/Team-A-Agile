@@ -29,7 +29,7 @@ app.get('/job-roles', async (req, res) => {
 });
 
 app.get('/bands', async (req, res) => {
-    const response = await fetch(api_url+'bands',{method:'GET',headers:{}})
+    const response = await fetch(api_url+'/bands',{method:'GET',headers:{}})
     const bandData = await response.json();
     res.render('bandPage', {items: bandData}); 
 });
@@ -47,9 +47,9 @@ app.get('/job-roles/:id', async (req, res) => {
 
 app.get('/bands/:id/competency', async (req, res) => {
     var id = req.params.id;
-    const response = await fetch(api_url+'bands/'+id+'/competency',{method:'GET',headers:{}})
+    const response = await fetch(api_url+`/bands/${id}/competency`,{method:'GET',headers:{}})
     const competencyData = await response.json();
-    const namesResponse = await fetch(api_url+'competencyNames',{method:'GET',headers:{}})
+    const namesResponse = await fetch(api_url+'/competencyNames',{method:'GET',headers:{}})
     const competencyNames = await namesResponse.json();
     res.render('competencyPage', {competency: competencyData, names: competencyNames}); 
 });
