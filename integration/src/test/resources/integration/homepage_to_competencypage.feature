@@ -1,11 +1,12 @@
 Feature: Viewing the competency page
-  Scenario: Employee can click from the homepage to the competency page
-    Given as a kainos employee I want to get to the competencies per band page from the home page
+
+  Scenario Outline: Employee can click from the homepage to the competency page
+    Given I am on the Home page
     When I click on the bands button
-    When I click on the <band> heading
-    Then I should be on the competencies page for that band
+    And I click on the <band> heading
+    Then I should be on the competencies page
 
     Examples:
-    |band       |
-    |Apprentice |
-    |Trainee    |
+      | band       |
+      | Apprentice |
+      | Trainee    |

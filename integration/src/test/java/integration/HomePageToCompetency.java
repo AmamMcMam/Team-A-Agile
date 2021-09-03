@@ -13,11 +13,11 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 public class HomePageToCompetency {
-    WebDriver driver = RunCucumberTest.getDriver();
+    private WebDriver driver = RunCucumberTest.getDriver();
     private final String HOME_PAGE = "http://localhost:6555/#";
 
 
-    @Given("as a kainos employee I want to get to the competencies per band page from the home page")
+    @Given("I am on the Home page")
     public HomePageToCompetency employeeGoesToHomePage(){
         driver.navigate().to(HOME_PAGE);
         return this;
@@ -38,7 +38,7 @@ public class HomePageToCompetency {
         return this;
     }
 
-    @Then("I should be on the competencies page for that band")
+    @Then("I should be on the competencies page")
     public HomePageToCompetency checkCapabilitiesPageTitle(){
         CompetencyPage competencyPage = new CompetencyPage(driver);
         String expectedTitle = "Competencies";
