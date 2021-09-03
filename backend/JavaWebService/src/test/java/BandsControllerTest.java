@@ -8,6 +8,7 @@ import org.mockito.junit.MockitoJUnitRunner;
 import java.util.Arrays;
 import java.util.List;
 
+import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 
 @RunWith(MockitoJUnitRunner.class)
@@ -43,6 +44,6 @@ public class BandsControllerTest {
 
         //assert
         Mockito.verify(mockService).getCompetencyPerBand(bandID);
-        assertTrue(competencyElementList == elements);
+        assertSame(competencyElementList, elements);
     }
 }

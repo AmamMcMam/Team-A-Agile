@@ -2,13 +2,11 @@ package com.kainos.ea.resources;
 
 import com.kainos.ea.db.BandMapper;
 import com.kainos.ea.db.RoleMapper;
-import com.kainos.ea.db.RolesMapper;
-import org.apache.ibatis.annotations.Mapper;
+
 
 import java.util.List;
 
 public class BandService {
-    private Band band;
     private RoleMapper roleMapper;
     private BandMapper bandMapper;
 
