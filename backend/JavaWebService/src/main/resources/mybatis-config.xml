@@ -19,6 +19,6 @@
         <mapper class="com.kainos.ea.db.RolesMapper"/>
         <mapper class="com.kainos.ea.db.RoleMapper"/>
         <mapper class="com.kainos.ea.db.BandMapper"/>
+        <mapper class="com.kainos.ea.db.CapabilityMapper"/>
     </mappers>
-
 </configuration>

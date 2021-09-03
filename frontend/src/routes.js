@@ -1,31 +1,25 @@
 const express = require('express')
 const nunjucks = require('nunjucks');
-const fetch = require('node-fetch')
 const path = require('path');
-
-require('dotenv').config()
+const jobs = require('./jobRoles.js')
+const caps = require('./capabilities.js')
 
 const app = express()
 app.set('view engine', 'njk');
 app.use(express.static(path.join(__dirname, "public")));
 
-nunjucks.configure('viewdir', { 
+nunjucks.configure('viewdir', {
     express: app 
 }); 
 
-const api_url = process.env.API_URL;
-
 // Add routes
 app.get('/', async (req, res) => {
-    const response = await fetch(api_url+'/api/',{method:'GET',headers:{}})
-    const data = await response.json();
-    res.render('homePage', {test: data}); 
+    res.render('homePage'); 
   });
 
 app.get('/job-roles', async (req, res) => {
-    const response = await fetch(api_url+'/job-roles',{method:'GET',headers:{}})
-    const roleData = await response.json();
-    res.render('jobRolesPage', {items: roleData}); 
+    const results = await jobs.getJobRoles();
+    res.render('jobRolesPage', {items: results}); 
 });
 
 app.get('/bands', async (req, res) => {
@@ -35,14 +29,18 @@ app.get('/bands', async (req, res) => {
 });
 
 app.get('/job-roles/:id', async (req, res) => {
-    var id = req.params.id;
-    console.log(api_url+`/job-roles/${id}`)
-    const response = await fetch(api_url+`/job-roles/${id}`,{method:'GET',headers:{}})
-    const roleData = await response.json();
-    const bandResponse = await fetch(api_url+`/bands/${roleData.bandID}`,{method:'GET',headers:{}})
-    const bandData = await bandResponse.json();
-    res.render('jobRolePage', {role: roleData, band: bandData}); 
+    const results = await jobs.getJobRole(req.params.id);
+    res.render('jobRolePage', {role: results.roleData, band: results.bandData});
+});
 
+app.get('/capabilities', async (req, res) => {
+    const results = await caps.getCapabilities()
+    res.render('capabilities', {items: results});
+});
+
+app.get('/capabilities/:id', async (req, res) => {
+    const results = await caps.getCapabilityRoles(req.params.id);
+    res.render('jobRolesPage', {items: results}); 
 });
 
 app.get('/bands/:id/competency', async (req, res) => {
