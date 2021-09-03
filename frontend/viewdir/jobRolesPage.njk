@@ -3,7 +3,7 @@
 {% block content %}
     <div class="container">
         <h5 class="title"><span id="resultsHeader">{{items.length}}
-            </span>{% if items.length < 2 %} result{% else %} results{% endif %}</span>
+            </span>{% if items.length === 1 %} result{% else %} results{% endif %}</span>
         </h5>
         <div class="divider"></div>
         {% for item in items %}
