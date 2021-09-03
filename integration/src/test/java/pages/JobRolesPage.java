@@ -22,6 +22,8 @@ public class JobRolesPage extends PageObject {
     @FindBy(id = "role-1")
     private WebElement roleName;
 
+    @FindBy(id = "role-2")
+    private WebElement roleName2;
 
     public JobRolesPage(WebDriver driver) {
         super(driver);
@@ -49,5 +51,8 @@ public class JobRolesPage extends PageObject {
 
     public void clickJobRole() {
         roleName.click();
+    }
+    public void clickSecondRoleOnPage() {
+        roleName2.click();
     }
 }

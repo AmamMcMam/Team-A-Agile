@@ -28,5 +28,4 @@ public class Band{
     public String getBandExpectations() {
         return bandExpectations;
     }
-
 }

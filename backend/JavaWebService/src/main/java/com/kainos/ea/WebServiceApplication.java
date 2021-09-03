@@ -6,6 +6,7 @@ import com.kainos.ea.db.RoleMapper;
 import com.kainos.ea.db.RolesMapper;
 import com.kainos.ea.services.BandService;
 import com.kainos.ea.services.RoleService;
+import com.kainos.ea.controllers.*;
 import io.dropwizard.Application;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;

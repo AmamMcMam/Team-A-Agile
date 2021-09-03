@@ -16,6 +16,9 @@ public class BandService {
         this.roleMapper = roleMapper;
         this.bandMapper = bandMapper;
     }
+    public BandService(RoleMapper roleMapper){
+        this.roleMapper = roleMapper;
+    }
 
     public Band getBand(int bandID) {
         return roleMapper.getBand(bandID);
