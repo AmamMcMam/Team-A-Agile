@@ -49,4 +49,28 @@ public class CompetencyElement {
     public int getCompBandID() {
         return compBandID;
     }
+
+    public void setCompetencyElementID(int competencyElementID) {
+        this.competencyElementID = competencyElementID;
+    }
+
+    public void setCompetencyID(int competencyID) {
+        this.competencyID = competencyID;
+    }
+
+    public void setCompBandID(int compBandID) {
+        this.compBandID = compBandID;
+    }
+
+    public void setCompetencyName(String competencyName) {
+        this.competencyName = competencyName;
+    }
+
+    public void setElementDescription(String elementDescription) {
+        this.elementDescription = elementDescription;
+    }
+
+    public void setElementName(String elementName) {
+        this.elementName = elementName;
+    }
 }
