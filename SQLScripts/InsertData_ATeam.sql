@@ -15,6 +15,28 @@ VALUES ("Product Principal", "PlaceHolder", "13-07-2021", "Full Time", "Birmingh
         ("Market Intelligence Analyst", "PlaceHolder", "24-08-2021", "Full Time", "London", 1, 1, ""),
         ("Market Intelligence Analyst", "PlaceHolder", "24-01-2021", "Full Time", "Birmingham", 2, 2, "");
 
+
+
+INSERT INTO responsibilities (`responsibilityId`, `responsibility`)
+VALUES (1,"Has successfully delivered software designs for multi-tiered modern software applications."),
+	   (2,"Understands whole solution architecture concepts and can communicate and negotiate these with customer architects."),
+	   (3,"Can prioritise non-functional concerns for customers and has experience incorporating these into the application design."),
+	   (4,"Able to simply and clearly communicate technical design in conversation and presentations.");
+
+
+
+INSERT INTO role_responsibilities (`roleId`, `responsibilityId`)
+VALUES (1, 1),
+	   (1, 4),
+	   (2, 2),
+	   (2, 3),
+	   (3, 2),
+	   (3, 4),
+	   (4, 1),
+	   (4, 3);
+
+
+
 INSERT INTO competency(competencyName, competencyDescription)
 VALUES ("Personal Performance", "Effective leadership requires individuals to draw upon values, strengths, and abilities to deliver high standards of service. Demonstrating effectiveself-awareness, self-management, continued personal development and acting with integrity."),
 ("Working with others", "Effective leadership requires individuals to work with others in teams and networks to deliver and improve services.  Mobilising people in an inclusive way to drive continuous business improvement."),
@@ -67,3 +89,4 @@ VALUES (1, "Developing self-awareness", 5, "Understandsown personal preferences,
 VALUES (1, "Managing yourself", 5, "Consistently sets own goals and manages this independently. Makingautonomousdecisions and are able to ‘get on with the job’ escalating decisions only when appropriate."),
 VALUES (1, "Continuing personal development", 5, "Identifies and addressesteam or individual capability requirements and gaps to deliver current and future work. Consistently identifies and developsself and othersto support talent development."),
 VALUES (1, "Acting with integrity", 5, "Demonstrates professional and organisational values through actions and behaviours. Behaves in an inclusive manner and respects equality and diversity.");
+

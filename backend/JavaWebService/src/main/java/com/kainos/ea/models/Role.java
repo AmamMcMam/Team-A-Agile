@@ -5,6 +5,9 @@ import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
+import java.util.Arrays;
+import java.util.List;
+
 public class Role {
     private int roleID;
     private String roleName;
@@ -16,10 +19,22 @@ public class Role {
     private int capabilityID;
     private String link;
     private static final DateTimeFormatter FORMATTER = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+    private List<String> jobResponsibilities;
 
     public Role() {}
 
-    public Role(int roleID, String roleName, String roleDesc, LocalDate datePosted, String hours, String location, int bandID, int capabilityID, String link) {
+    public Role(
+            int roleID,
+            String roleName,
+            String roleDesc,
+            LocalDate datePosted,
+            String hours,
+            String location,
+            int bandID,
+            int capabilityID,
+            String link,
+            String jobResponsibilities
+    ) {
         this.roleID = roleID;
         this.roleName = roleName;
         this.roleDesc = roleDesc;
@@ -29,6 +44,9 @@ public class Role {
         this.bandID = bandID;
         this.capabilityID = capabilityID;
         this.link = link;
+        if (jobResponsibilities != null) {
+            this.jobResponsibilities = Arrays.asList(jobResponsibilities.split(","));
+        }
     }
 
     public int getRoleID() {
@@ -101,5 +119,13 @@ public class Role {
 
     public void setLink(String link) {
         this.link = link;
+    }
+
+    public void setJobResponsibilities(String jobResponsibilities) {
+        this.jobResponsibilities = Arrays.asList(jobResponsibilities.split(","));
+    }
+
+    public List<String> getJobResponsibilities() {
+        return jobResponsibilities;
     }
 }

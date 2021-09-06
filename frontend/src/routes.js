@@ -15,12 +15,12 @@ nunjucks.configure('viewdir', {
 
 // Add routes
 app.get('/', async (req, res) => {
-    res.render('homePage'); 
-  });
+    res.render('homePage');
+});
 
 app.get('/job-roles', async (req, res) => {
     const results = await jobs.getJobRoles();
-    res.render('jobRolesPage', {items: results}); 
+    res.render('jobRolesPage', {items: results});
 });
 
 app.get('/bands', async (req, res) => {
@@ -40,7 +40,7 @@ app.get('/capabilities', async (req, res) => {
 
 app.get('/capabilities/:id', async (req, res) => {
     const results = await caps.getCapabilityRoles(req.params.id);
-    res.render('jobRolesPage', {items: results}); 
+    res.render('jobRolesPage', {items: results});
 });
 
 app.get('/bands/:id/competency', async (req, res) => {
