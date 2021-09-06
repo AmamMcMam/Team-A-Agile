@@ -113,7 +113,6 @@ public class Role {
     public void setCapabilityID(int capabilityID) {
         this.capabilityID = capabilityID;
     }
-
     public String getLink() {
         return link;
     }
