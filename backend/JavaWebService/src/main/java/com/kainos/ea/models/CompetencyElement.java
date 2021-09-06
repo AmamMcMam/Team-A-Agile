@@ -5,16 +5,13 @@ public class CompetencyElement {
     private String elementName;
     private String elementDescription;
     private int competencyID;
-    private int compBandID;
     private String competencyName;
 
     //for getting the competencies per band
-    public CompetencyElement(int competencyElementID, int competencyID, String elementName,
-                             int compBandID, String elementDescription, String competencyName){
+    public CompetencyElement(int competencyElementID, int competencyID, String elementName, String elementDescription, String competencyName){
         this.competencyElementID = competencyElementID;
         this.competencyID = competencyID;
         this.elementName = elementName;
-        this.compBandID = compBandID;
         this.elementDescription = elementDescription;
         this.competencyName = competencyName;
     }
@@ -46,20 +43,12 @@ public class CompetencyElement {
         return competencyID;
     }
 
-    public int getCompBandID() {
-        return compBandID;
-    }
-
     public void setCompetencyElementID(int competencyElementID) {
         this.competencyElementID = competencyElementID;
     }
 
     public void setCompetencyID(int competencyID) {
         this.competencyID = competencyID;
-    }
-
-    public void setCompBandID(int compBandID) {
-        this.compBandID = compBandID;
     }
 
     public void setCompetencyName(String competencyName) {
