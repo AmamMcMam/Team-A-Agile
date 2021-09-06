@@ -15,9 +15,9 @@ VALUES ("Product Principal", "PlaceHolder", "2021-07-13", "Full Time", "Birmingh
 
 INSERT INTO responsibilities (`responsibilityId`, `responsibility`)
 VALUES (1,"Has successfully delivered software designs for multi-tiered modern software applications."),
-		(2,"Understands whole solution architecture concepts and can communicate and negotiate these with customer architects."),
-		(3,"Can prioritise non-functional concerns for customers and has experience incorporating these into the application design."),
-		(4,"Able to simply and clearly communicate technical design in conversation and presentations.");
+	   (2,"Understands whole solution architecture concepts and can communicate and negotiate these with customer architects."),
+	   (3,"Can prioritise non-functional concerns for customers and has experience incorporating these into the application design."),
+	   (4,"Able to simply and clearly communicate technical design in conversation and presentations.");
 
 INSERT INTO role_responsibilities (`roleId`, `responsibilityId`)
 VALUES (1, 1),

@@ -40,7 +40,6 @@ CREATE TABLE `band` (
   `roleId` smallint NOT NULL,
   `responsibilityId` smallint NOT NULL,
    PRIMARY KEY (`roleId`,`responsibilityId`),
-   KEY `responsibilityId` (`responsibilityId`),
    CONSTRAINT `role_responsibilities_ibfk_1` FOREIGN KEY (`responsibilityId`) REFERENCES `responsibilities` (`responsibilityId`)
  );
 
