@@ -61,3 +61,7 @@ ul.responsibility-list li {
     display: list-item;
     margin-left: 1em;
 }
+.comp-sub-heading{
+    color:#41679f;
+    height: 25px;
+}
