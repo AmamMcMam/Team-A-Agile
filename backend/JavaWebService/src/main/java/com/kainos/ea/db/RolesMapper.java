@@ -6,6 +6,6 @@ import java.util.List;
 
 @Mapper
 public interface RolesMapper {
-    @Select("select * from roles;")
+    @Select("select * from roles")
     List<Role> viewJobRoles();
 }

@@ -56,6 +56,11 @@ main {
     height: 50px;
 }
 
+ul.responsibility-list li {
+    list-style-type: disc;
+    display: list-item;
+    margin-left: 1em;
+}
 .comp-sub-heading{
     color:#41679f;
     height: 25px;

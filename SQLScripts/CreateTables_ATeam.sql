@@ -30,6 +30,19 @@ CREATE TABLE `band` (
   PRIMARY KEY (`bandID`)
 );
 
+ CREATE TABLE `responsibilities` (
+  `responsibilityId` smallint NOT NULL,
+  `responsibility` text NOT NULL,
+   PRIMARY KEY (`responsibilityId`)
+ );
+
+ CREATE TABLE `role_responsibilities` (
+  `roleId` smallint NOT NULL,
+  `responsibilityId` smallint NOT NULL,
+   PRIMARY KEY (`roleId`,`responsibilityId`),
+   CONSTRAINT `role_responsibilities_ibfk_1` FOREIGN KEY (`responsibilityId`) REFERENCES `responsibilities` (`responsibilityId`)
+ );
+
 CREATE TABLE competency(
     competencyID TINYINT PRIMARY KEY AUTO_INCREMENT,
     competencyName varchar (40),
@@ -46,3 +59,4 @@ CREATE TABLE competency_element(
     CONSTRAINT competency_element_to_competency_FK FOREIGN KEY (competencyID) REFERENCES competency (competencyID),
     CONSTRAINT band_to_competency_element_FK FOREIGN KEY (bandID) REFERENCES band (bandID)
 );
+
