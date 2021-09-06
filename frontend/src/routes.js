@@ -3,6 +3,7 @@ const nunjucks = require('nunjucks');
 const path = require('path');
 const jobs = require('./jobRoles.js')
 const caps = require('./capabilities.js')
+const api_url = process.env.API_URL;
 
 const app = express()
 app.set('view engine', 'njk');
@@ -15,12 +16,24 @@ nunjucks.configure('viewdir', {
 // Add routes
 app.get('/', async (req, res) => {
     res.render('homePage');
-  });
+});
 
 app.get('/job-roles', async (req, res) => {
     const results = await jobs.getJobRoles();
     res.render('jobRolesPage', {items: results});
 });
+
+// app.get('/', async (req, res) => {
+//     const response = await fetch(api_url,{method:'GET',headers:{}})
+//     const data = await response.json();
+//     res.render('homePage', {test: data});
+// });
+
+// app.get('/job-roles', async (req, res) => {
+//     const response = await fetch(`${api_url}/job-roles`,{method:'GET',headers:{}})
+//     const roleData = await response.json();
+//     res.render('jobRolesPage', {items: roleData});
+// });
 
 app.get('/job-roles/:id', async (req, res) => {
     const results = await jobs.getJobRole(req.params.id);

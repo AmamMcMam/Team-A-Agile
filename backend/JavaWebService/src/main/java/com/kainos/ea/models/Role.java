@@ -27,7 +27,7 @@ public class Role {
             int roleID,
             String roleName,
             String roleDesc,
-            String datePosted,
+            LocalDate datePosted,
             String hours,
             String location,
             int bandID,

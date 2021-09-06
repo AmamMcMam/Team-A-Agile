@@ -15,7 +15,7 @@ public class JobRolePage extends PageObject {
     @FindBy(id = "bandName")
     private WebElement bandName;
 
-    @FindBy(id = "responsibilityTitle") private WebElement responsibilityTitle;
+    @FindBy(id = "responsibility-title") private WebElement responsibilityTitle;
 
     @FindBy(xpath = "//li") private List<WebElement> listItem;
 
@@ -74,3 +74,4 @@ public class JobRolePage extends PageObject {
     }
 
 }
+

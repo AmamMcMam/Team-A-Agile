@@ -29,3 +29,20 @@ CREATE TABLE `band` (
   `bandExpectations` text,
   PRIMARY KEY (`bandID`)
 );
+
+ CREATE TABLE `responsibilities` (
+  `responsibilityId` smallint NOT NULL,
+  `responsibility` text NOT NULL,
+   PRIMARY KEY (`responsibilityId`)
+ );
+
+ CREATE TABLE `role_responsibilities` (
+  `roleId` smallint NOT NULL,
+  `responsibilityId` smallint NOT NULL,
+   PRIMARY KEY (`roleId`,`responsibilityId`),
+   KEY `responsibilityId` (`responsibilityId`),
+   CONSTRAINT `role_responsibilities_ibfk_1` FOREIGN KEY (`responsibilityId`) REFERENCES `responsibilities` (`responsibilityId`)
+ );
+
+
+
