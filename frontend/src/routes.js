@@ -3,7 +3,6 @@ const nunjucks = require('nunjucks');
 const path = require('path');
 const jobs = require('./jobRoles.js')
 const caps = require('./capabilities.js')
-const api_url = process.env.API_URL;
 const bands = require('./bands.js')
 
 const app = express()
