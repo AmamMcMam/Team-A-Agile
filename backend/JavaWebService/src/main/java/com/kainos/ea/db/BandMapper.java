@@ -16,7 +16,7 @@ public interface BandMapper {
     @Select("select competencyID, competencyName from competency")
     List<CompetencyElement> getCompetencyNames();
 
-    @Select("select competencyElementID, competency_element.bandID, competency_element.competencyID, elementName, elementDescription, competencyName " +
+    @Select("select competencyElementID, competency_element.competencyID, elementName, elementDescription, competencyName " +
             "from competency_element join band using(bandID) join competency where " +
             "band.bandID = #{compBandID} and competency.competencyID = competency_element.competencyID")
     List<CompetencyElement> getCompetencyPerBand(int compBandID);

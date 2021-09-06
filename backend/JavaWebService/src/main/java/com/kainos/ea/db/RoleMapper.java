@@ -7,10 +7,10 @@ import org.apache.ibatis.annotations.Select;
 
 @Mapper
 public interface RoleMapper {
-    @Select("select roleID, roleName, roleDesc, datePosted, hours, location, bandID, capabilityID, link from roles where roleID = #{roleID}")
+    @Select("select roleName, roleDesc, datePosted, hours, location, bandID, capabilityID, link from role where roleID = #{roleID}")
     Role getRole(int roleID);
 
-    @Select("select bandID, bandName, bandExpectations from band where bandID = #{roleBandId}")
+    @Select("select bandID, bandName from band where bandID = #{roleBandId}")
     Band getBand(int roleBandId);
 
 }
