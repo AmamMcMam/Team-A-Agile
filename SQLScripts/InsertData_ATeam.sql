@@ -8,12 +8,15 @@ insert into capability (capability) VALUES(("Engineering"),
 											("Platforms"));
 
 INSERT INTO roles (`roleName`, `roleDesc`, `datePosted`, `hours`, `location`, `bandID`, `capabilityID`, `link`)
-VALUES ("Product Principal", "PlaceHolder", "13-07-2021", "Full Time", "Birmingham", 1, 1, ""),
+VALUES ("Product Principal", "As a Product Principal you'll be responsible for directing and leading significant consulting assignments and delivering business solutions that meet client needs.
+Work closely with the Sales team to develop and deliver a strategy for adding value to the clients, ensuring that expectations are managed proactively and any issues arising are dealt with promptly and appropriately.
+Initiate & build trusted relationships with clients at senior/Board level, based upon personal credibility and a sound understanding of business & industry sector dynamics.
+Manage and motivate assignment teams and projects, ensuring that all have clear objectives, receive regular feedback on performance, and have timely, honest project appraisals completed.", "2021-07-13", "Full Time", "Birmingham", 1, 1, ""),
         ("Solutions Architect",
          "As a Solution Architect (Manager) in Kainos, you’ll be responsible for leading multi-skilled agile teams to design and deliver high quality solutions which delight our customers and impact the lives of users worldwide. You’ll work with customer architects to agree functional and non-functional designs, advising customers and managers on the estimated effort, technical implications and complexity surrounding your designs.",
           "20-06-2021", "Full Time", "Derry-Londonderry", 1, 1, "https://kainossoftwareltd.sharepoint.com/people/Job%20Specifications/Forms/AllItems.aspx?id=%2Fpeople%2FJob%20Specifications%2FEngineering%2FJob%20Profile%20%2D%20Solution%20Architect%20%28Manager%29%2Epdf&parent=%2Fpeople%2FJob%20Specifications%2FEngineering&p=true&originalPath=aHR0cHM6Ly9rYWlub3Nzb2Z0d2FyZWx0ZC5zaGFyZXBvaW50LmNvbS86YjovZy9wZW9wbGUvRVNwcDU2Zlp5cmhLaTZ1Q3V3cHNoRHdCM25tbzFCTWtiUUtZRFhiTkhDaV9zdz9ydGltZT1tcHlFbzJSczJVZw"),
-        ("Market Intelligence Analyst", "PlaceHolder", "24-08-2021", "Full Time", "London", 1, 1, ""),
-        ("Market Intelligence Analyst", "PlaceHolder", "24-01-2021", "Full Time", "Birmingham", 2, 2, "");
+        ("Market Intelligence Analyst", "As a Market Intelligence Analyst (Senior Associate) at Kainos, you will proactively develop initiatives for gathering and analysing market and competitor data, as well as responding to specific research requests, to deliver actionable intelligence which will drive the growth of the business. You will work at times autonomously, but often as part of a team, to produce strategic intelligence reports using creative research methodologies to identify insights and deliver strategic recommendations. You will spot trends and look for new markets and accounts to target based on our offerings and potential new offerings.", "2021-08-24", "Full Time", "London", 1, 1, ""),
+        ("Market Intelligence Analyst", "As a Market Intelligence Analyst (Senior Associate) at Kainos, you will proactively develop initiatives for gathering and analysing market and competitor data, as well as responding to specific research requests, to deliver actionable intelligence which will drive the growth of the business. You will work at times autonomously, but often as part of a team, to produce strategic intelligence reports using creative research methodologies to identify insights and deliver strategic recommendations. You will spot trends and look for new markets and accounts to target based on our offerings and potential new offerings.", "2021-01-24", "Full Time", "Birmingham", 2, 2, "");
 
 
 
@@ -89,4 +92,3 @@ VALUES (1, "Developing self-awareness", 5, "Understandsown personal preferences,
 VALUES (1, "Managing yourself", 5, "Consistently sets own goals and manages this independently. Makingautonomousdecisions and are able to ‘get on with the job’ escalating decisions only when appropriate."),
 VALUES (1, "Continuing personal development", 5, "Identifies and addressesteam or individual capability requirements and gaps to deliver current and future work. Consistently identifies and developsself and othersto support talent development."),
 VALUES (1, "Acting with integrity", 5, "Demonstrates professional and organisational values through actions and behaviours. Behaves in an inclusive manner and respects equality and diversity.");
-
