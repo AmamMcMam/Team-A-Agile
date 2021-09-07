@@ -31,14 +31,14 @@ CREATE TABLE `role` (
 
 CREATE TABLE `competency`(
     `competencyID` tinyint PRIMARY KEY AUTO_INCREMENT,
-    `competencyName` varchar (80),
+    `competencyName` varchar (100),
     `competencyDescription` text
 );
 
 CREATE TABLE `competency_element`(
     `competencyElementID` tinyint AUTO_INCREMENT,
     `competencyID` tinyint NOT NULL,
-    `elementName` varchar (40),
+    `elementName` varchar (100),
     `bandID` tinyint,
     `elementDescription` text,
     PRIMARY KEY (`competencyElementID`),
