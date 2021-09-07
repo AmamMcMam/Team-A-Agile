@@ -5,7 +5,7 @@
     - [Backend Setup](#backend-setup)
         - [Java SDK](#java-sdk)
         - [Intellij](#intellij)
-    - [Viewing Backend](viewing-backend)
+    - [Viewing Backend](#viewing-backend)
     - [Frontend Setup](#frontend-setup)
         - [Microsoft Visual Studio](#microsoft-visual-studio)
 - [Testing Instructions](#testing-instructions)
