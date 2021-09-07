@@ -6,9 +6,9 @@ CREATE TABLE `role` (
   `roleID` smallint NOT NULL AUTO_INCREMENT,
   `roleName` varchar(100) NOT NULL,
   `roleDesc` text NOT NULL,
-  `datePosted` date not null,
-  `hours` varchar(10) not null,
-  `location` varchar(100) not null,
+  `datePosted` date NOT NULL,
+  `hours` varchar(10) NOT NULL,
+  `location` varchar(100) NOT NULL,
   `bandID` tinyint NOT NULL,
   `capabilityID` tinyint NOT NULL,
   `link` varchar(1000),
@@ -30,21 +30,21 @@ CREATE TABLE `band` (
   PRIMARY KEY (`bandID`)
 );
 
-CREATE TABLE competency(
-    competencyID TINYINT PRIMARY KEY AUTO_INCREMENT,
-    competencyName varchar (40),
-    competencyDescription text
+CREATE TABLE 'competency'(
+    'competencyID' tinyint PRIMARY KEY AUTO_INCREMENT,
+    'competencyName' varchar (40),
+    'competencyDescription' text
 );
 
-CREATE TABLE competency_element(
-    competencyElementID TINYINT AUTO_INCREMENT,
-    competencyID TINYINT not null,
-    elementName varchar (40),
-    bandID TINYINT,
-    elementDescription text,
-    PRIMARY KEY (competencyElementID),
-    CONSTRAINT competency_element_to_competency_FK FOREIGN KEY (competencyID) REFERENCES competency (competencyID),
-    CONSTRAINT band_to_competency_element_FK FOREIGN KEY (bandID) REFERENCES band (bandID)
+CREATE TABLE 'competency_element'(
+    'competencyElementID' tinyint AUTO_INCREMENT,
+    'competencyID' tinyint NOT NULL,
+    'elementName' varchar (40),
+    'bandID' tinyint,
+    'elementDescription' text,
+    PRIMARY KEY ('competencyElementID'),
+    CONSTRAINT 'competency_element_to_competency_FK' FOREIGN KEY ('competencyID') REFERENCES 'competency' ('competencyID'),
+    CONSTRAINT 'band_to_competency_element_FK' FOREIGN KEY ('bandID') REFERENCES 'band' ('bandID')
 );
 
 CREATE TABLE `responsibility` (
