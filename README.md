@@ -5,12 +5,18 @@
     - [Backend Setup](#backend-setup)
         - [Java SDK](#java-sdk)
         - [Intellij](#intellij)
-    - [Viewing Backend](#viewing-backend)
+        - [Configuration Setup](#configuration-setup)
+    - [Access Backend Endpoints](#access-backend-endpoints)
     - [Frontend Setup](#frontend-setup)
         - [Microsoft Visual Studio](#microsoft-visual-studio)
 - [Testing Instructions](#testing-instructions)
     - [Unit Tests](#unit-tests)
     - [Cucumber Tests](#cucumber-tests)
+    - [Run Linting Check](#run-linting-check)
+
+## Team A Agile Project
+[![CircleCI](https://circleci.com/gh/AmamMcMam/Team-A-Agile/tree/main.svg?style=svg)](https://circleci.com/gh/AmamMcMam/Team-A-Agile/tree/main)
+[![codecov](https://codecov.io/gh/AmamMcMam/Team-A-Agile/branch/main/graph/badge.svg?token=574D2USDKR)](https://codecov.io/gh/AmamMcMam/Team-A-Agile)
 
 ## Setup Instructions
 
@@ -26,48 +32,54 @@ For the backend we recommend you install Intellij Community Edition if you don't
 
 - [Intellij Download](https://www.jetbrains.com/idea/download/#section=mac)
 
-You will then need to open the JavaWebService file in Intellij which is in:
+You will then need to open the JavaWebService file which is in:
 
  Team-A-Agile/backend
 
-Once the project is opened the pom.xml file will run and install the necessary dependencies. If it doesn't then open this file in the editor and reload it by clicking the cycling arrow on the top right.
+#### **Configuration Setup**
 
 1. You will need to create a file called "config.properties" in the resource folder to hold your database credentials. The resource folder is located in:
 
-src/main
-
-Inside config.properties copy/paste the code below and replace the placeholder data with your own.
-
 ```
-driver: placeholder
-username: placeholder
-password: placeholder
-url: placeholder
-```
-After that you need to open the terminal inside Intellij. Just click on the terminal tab at the bottom of the page. On the command line type:
-
-```
-npm clean install
+backend
+└───JavaWebService
+│   └───src
+│   |   └───main
+│   │    │   └───resources
+│   │    │   │   config.properties
 ```
 
-2. Next you will need to click on the drop-down menu in the top right next to the green hammer and click 'Edit Configurations'
+2. Put the following inside config.properties file:
+
+```
+driver: <path to database driver>
+username: <database username>
+password: <database password>
+url: <database url>
+```
+Run the following command to install all maven dependencies:
+
+```
+mvn clean install
+```
+
+3. Update the program arguments. If using IntelliJ, press the 'Edit Configurations' button:
 ![reference](images/setup1.png)
 
-A menu will popup and in the 'program arguments' field enter in "server" click 'apply' then 'ok'.
+In the 'program arguments' field add the following:
 
-You should be able to now run the backend by clicking the green arrow in the top right.
+```server config.yml```
 
 ---
 
-### Viewing Backend
+### Access Backend Endpoints
 
 With the backend running you should be able to view various requests to the database server by going to:
 
 http://localhost:8080/api
 
-You can view specific calls by changing what comes after api such as:
-
-http://localhost:8080/api/bands
+Please check the API documentation to find more specific endpoints:
+http://localhost:8080/swagger
 
 
 ---
@@ -80,24 +92,28 @@ For the frontend we recommend you use Microsoft Visual Studio Code.
 
 - [Microsoft Visual Studio Code download](https://code.visualstudio.com/?wt.mc_id=vscom_downloads)
 
-1. Open the frontend folder
-
-2. In the root of the frontend folder create a file called ".env". 
-
-3. Inside the .env file, copy the code below replacing the 'placeholder' with the port number of the backend api. Make sure to save the file once added.
+1. In the root of the frontend folder create an environment file (.env).
 ```
-API_URL=http://localhost:placeholder/api
+frontend
+└───src
+│   │ .env
 ```
 
-4. Open the terminal in VScode by going to 'View' -> 'Terminal' and on the command line type:
+3. Include the following inside the .env file:
+```
+API_URL=http://localhost:<PORT>/api
+```
+
+4. Run the following command in terminal to install necessary packages:
 ```
 npm install
 ```
 
-Then once the packages have installed type:
+Run the following command to start the web-application:
 ```
 npm start
 ``` 
+
 Once both the frontend and the backend are running you can view the frontend.
 
 To view the frontend, follow this link: http://localhost:6555/
@@ -108,20 +124,24 @@ To view the frontend, follow this link: http://localhost:6555/
 
 ### Unit Tests
 
-The unit tests are located in the backend folder under:
+The unit tests for the backend are located in the test folder:
 
-backend/JavaWebService/src/test/java
+```
+backend
+└───JavaWebService
+│   └───src
+│   │   └───test
+│   │   │   └───java
+│   │   │   │   │ BandsControllerTest.java
+│   │   │   │   │ CapabilityControllerTest.java
+│   │   │   │   │ JobRolesControllerTest.java
 
-These also depend on the pom.xml file to load the dependencies correctly.
+```
 
-Each Java Class file tests a single controller of the project with multiple tests inside each.
-In order to run these tests just left click the green arrow next to the class name and run the test.
-
-![reference](images/setup3.png)
 
 If you want to run all of the Unit tests, type in the terminal:
 ```
-mvn clean install
+mvn test
 ```
 ---
 
@@ -131,16 +151,35 @@ You will need chromedriver installed:
 
 - [Download](https://chromedriver.chromium.org/downloads)
 
-The Selenium tests which interact with the frontend application are located in the 'integration' folder in the root directory.
+The Selenium tests can be found in the integration folder.
 
-Open this folder in Intellij. This folder also has a pom.xml file which you will most likely have to reload. This will make sure the dependencies are loaded.
+```
+integration
+└───src
+│   └───test
+│   │   └───java
+│   │   │   └───integration
+│   │   │   │   │ *StepDefinitions.java
+│   │   │   │   │ RunCucumberTest.java
+│   │   │   └───pages
+│   │   │   │   │ PageObject.java
+│   │   │   │   │ *Page.java
+│   │   └───resources
+│   │   │   └───integration
+│   │   │   │   │ *.feature
 
-In order to run a test, you will first have to make sure both the backend api and the frontend are running and routing correctly. Make sure that your .config and .env files have the right information.
 
-Once both of those applications are running you can run all of the cucumber tests by going to:
+```
 
-/src/test/java/integration/RunCucumberTest.java
+In order to run a test, you will first have to make sure both the backend API and the frontend are running.
 
-Then left click on the green arrow to the left of the class name and run the tests.
+### Run Linting Check
+To run lint for the backend:
+```
+mvn checkstyle:checkstyle 
+```
 
-This will create an instance of Chrome which will open the website and navigate through the pages.
+To run lint for the frontend:
+```
+npm run lint
+```
