@@ -92,9 +92,7 @@ For the frontend we recommend you use Microsoft Visual Studio Code.
 API_URL=http://localhost:placeholder/api
 ```
 
-Open the terminal in VScode by going to 'View' -> 'Terminal'
-
-On the command line type:
+4. Open the terminal in VScode by going to 'View' -> 'Terminal' and on the command line type:
 ```
 npm install
 ```
