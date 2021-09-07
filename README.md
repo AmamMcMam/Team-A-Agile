@@ -5,6 +5,7 @@
     - [Backend Setup](#backend-setup)
         - [Java SDK](#java-sdk)
         - [Intellij](#intellij)
+    - [Viewing Backend](viewing-backend)
     - [Frontend Setup](#frontend-setup)
         - [Microsoft Visual Studio](#microsoft-visual-studio)
 - [Testing Instructions](#testing-instructions)
@@ -31,7 +32,7 @@ You will then need to open the JavaWebService file in Intellij which is in:
 
 Once the project is opened the pom.xml file will run and install the necessary dependencies. If it doesn't then open this file in the editor and reload it by clicking the cycling arrow on the top right.
 
-You will need to create a file called "config.properties" in the resource folder to hold your database credentials. The resource folder is located in:
+1. You will need to create a file called "config.properties" in the resource folder to hold your database credentials. The resource folder is located in:
 
 src/main
 
@@ -49,8 +50,7 @@ After that you need to open the terminal inside Intellij. Just click on the term
 npm clean install
 ```
 
-
-Next you will need to click on the drop-down menu in the top right next to the green hammer and click 'Edit Configurations'
+2. Next you will need to click on the drop-down menu in the top right next to the green hammer and click 'Edit Configurations'
 ![reference](images/setup1.png)
 
 A menu will popup and in the 'program arguments' field enter in "server" click 'apply' then 'ok'.
@@ -59,24 +59,40 @@ You should be able to now run the backend by clicking the green arrow in the top
 
 ---
 
+### Viewing Backend
+
+With the backend running you should be able to view various requests to the database server by going to:
+
+http://localhost:8080/api
+
+You can view specific calls by changing what comes after api such as:
+
+http://localhost:8080/api/bands
+
+
+---
+
 ### Frontend Setup
 
 ####  **Microsoft Visual Studio**
 
-For the frontend you will need to install Microsoft Visual Studio Code.
+For the frontend we recommend you use Microsoft Visual Studio Code.
 
 - [Microsoft Visual Studio Code download](https://code.visualstudio.com/?wt.mc_id=vscom_downloads)
 
-You will then need to open the 'frontend' file located in the root directory.
+1. Open the frontend folder
 
-In the 'frontend' folder create a file called ".env". Inside it copy/paste the code below replacing the 'placeholder' with the port number of the backend api. Make sure to save the file once added.
-
+2. In the root of the frontend folder create a file called ".env". 
+	
+	+-- frontend
+	|   +-- .env
+	
+	3. Inside the .env file, copy the code below replacing the 'placeholder' with the port number of the backend api. Make sure to save the file once added.
 ```
 API_URL=http://localhost:placeholder/api
 ```
 
 Open the terminal in VScode by going to 'View' -> 'Terminal'
-![reference](images/setup2.png)
 
 On the command line type:
 ```
@@ -86,9 +102,10 @@ npm install
 Then once the packages have installed type:
 ```
 npm start
-```
+``` 
+Once both the frontend and the backend are running you can view the frontend.
 
-You now should be able to go to the localhost url, replace placeholder with your port number: http://localhost:placeholder/
+To view the frontend, follow this link: http://localhost:6555/
 
 ---
 
