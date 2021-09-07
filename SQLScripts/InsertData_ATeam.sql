@@ -1,8 +1,8 @@
 use Kainos_A;
 
 
-INSERT INTO band(bandName, bandExpectations)
-VALUES ("Apprentice", ""), ("Trainee", ""), ("Associate", ""),("Senior Associate", ""), ("Consultant", ""), ("Manager",""), ("Principle", ""), ("Leadership Community", "");
+INSERT INTO band(bandName)
+VALUES ("Apprentice"), ("Trainee"), ("Associate"),("Senior Associate"), ("Consultant"), ("Manager"), ("Principle"), ("Leadership Community");
 
 
 

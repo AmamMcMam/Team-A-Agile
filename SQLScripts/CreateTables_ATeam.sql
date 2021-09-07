@@ -10,9 +10,8 @@ CREATE TABLE `capability` (
 
 CREATE TABLE `band` (
   `bandID` tinyint NOT NULL AUTO_INCREMENT,
-  `bandName` varchar(40) NOT NULL,
-  `bandExpectations` text,
-  PRIMARY KEY (`bandID`)
+  `bandName` varchar(40) NOT NULL
+   PRIMARY KEY (`bandID`)
 );
 
 CREATE TABLE `role` (
