@@ -30,4 +30,19 @@ public class CapabilityControllerTest {
         assertSame(caps, capList);
         Mockito.verify(mockService).getCapabilities();
     }
+
+    @Test
+    public void controllerReturnsCapabilityLeadInformationPerCapability(){
+        //arrange
+        CapabilitiesController controller = new CapabilitiesController(mockService);
+        List<Capability> capList = List.of(new Capability());
+        Mockito.when(mockService.getLeadPerCapability(1)).thenReturn(capList);
+
+        //act
+        List<Capability> caps = controller.getLeadPerCapability(1);
+
+        //assert
+        assertSame(caps, capList);
+        Mockito.verify(mockService).getLeadPerCapability(1);
+    }
 }
