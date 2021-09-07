@@ -2,6 +2,15 @@
 
 {% block content %}
     <div class="container">
+        {% if lead %}
+        <ul class="collection">
+            <li class="collection-item avatar">
+                <img id="lead-photo" src="{{lead.capabilityLeadPhoto}}" alt="Photo of {{lead.capabilityLeadName}}" class="circle">
+                <span id="lead-name" class="title white-text">{{lead.capabilityLeadName}}</span>
+                <p id="lead-message" class="white-text">{{lead.capabilityLeadMessage}}</p>
+            </li>
+        </ul>
+        {% endif %}
         <h5 class="title"><span id="resultsHeader">{{items.length}}
             </span>{% if items.length === 1 %} result{% else %} results{% endif %}</span>
         </h5>
