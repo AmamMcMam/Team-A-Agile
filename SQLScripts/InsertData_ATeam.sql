@@ -4,7 +4,11 @@ use Kainos_A;
 INSERT INTO band(bandName, bandExpectations)
 VALUES ("Apprentice", ""), ("Trainee", ""), ("Associate", ""),("Senior Associate", ""), ("Consultant", ""), ("Manager",""), ("Principle", ""), ("Leadership Community", "");
 
-insert into capability (capability) VALUES(("Engineering"),("Platforms"));
+
+
+INSERT INTO capability (capability) VALUES(("Engineering"),("Platforms"));
+
+
 
 INSERT INTO roles (`roleName`, `roleDesc`, `datePosted`, `hours`, `location`, `bandID`, `capabilityID`, `link`)
 VALUES ("Product Principal", "As a Product Principal you'll be responsible for directing and leading significant consulting assignments and delivering business solutions that meet client needs.
@@ -19,7 +23,7 @@ Manage and motivate assignment teams and projects, ensuring that all have clear 
 
 
 
-INSERT INTO responsibility (`responsibilityId`, `responsibility`)
+INSERT INTO responsibility (`responsibilityId`, `responsibilityTitle`)
 VALUES (1,"Has successfully delivered software designs for multi-tiered modern software applications."),
 	   (2,"Understands whole solution architecture concepts and can communicate and negotiate these with customer architects."),
 	   (3,"Can prioritise non-functional concerns for customers and has experience incorporating these into the application design."),
@@ -43,9 +47,6 @@ INSERT INTO competency(competencyName, competencyDescription)
 VALUES ("Personal Performance", "Effective leadership requires individuals to draw upon values, strengths, and abilities to deliver high standards of service. Demonstrating effectiveself-awareness, self-management, continued personal development and acting with integrity."),
 ("Working with others", "Effective leadership requires individuals to work with others in teams and networks to deliver and improve services.  Mobilising people in an inclusive way to drive continuous business improvement."),
 ("Setting Direction, Development and Accountability", "Effective leadership requires individuals to contribute to the aspirations of Kainos and act in a manner consistent with our values. Demonstrating effectiveness in identifying the contexts for change, applying knowledge, making decisions, and promoting accountability through effective self-management.");
---("Supporting and Delivering the Strategy", "Effective leadership requires the support, contribution, and delivery ofthe strategic vision by developing and agreeing strategic plans that place Kainos values at the heart of the service and ensuring that these are translated into achievable operational plans. Demonstrating effectiveness in supporting, framing, developing, implementing, and embedding the strategy."),
---("Commerciality and Risk", "Effective leadershiprequires individuals to demonstrate effectiveness within commerciality and risk and support efficiencies and profitability by maintaining an economic, long term focus in all activities.This includes identifying economic, market and customer issues and using these topromote innovative business models, commercial partnerships, and agreements to deliver greatest value –ensuring tight commercial controls of finance, assets and contracts to meet strategic priorities."),
---("Communicating and Influence", "Effective leadership requires individuals to be exceptional and confident communicators.  Showing an ability to adapt own style to suit various audiences.  Captivating and engaging others to promote and influence the Kainos vision.  Investing time in others to develop connections and role model our Kainos values.");
 
 
 
