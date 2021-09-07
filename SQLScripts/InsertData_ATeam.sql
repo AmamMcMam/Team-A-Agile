@@ -6,7 +6,9 @@ VALUES ("Apprentice"), ("Trainee"), ("Associate"),("Senior Associate"), ("Consul
 
 
 
-INSERT INTO capability (capability) VALUES("Engineering"),("Platforms");
+INSERT INTO capability (capability, capabilityLeadName, capabilityLeadPhoto, capabilityLeadMessage)
+VALUES("Engineering", "Andy Malpass", "https://kainossoftwareltd.sharepoint.com/marketing/Shared%20Documents/Images/Website%20Images/Headshots/Andy-Malpass.jpg", "Hi, I'm Andy the Engineering Lead."),
+	  ("Platforms", "Grainne Thumb", "https://kainossoftwareltd.sharepoint.com/marketing/Shared%20Documents/Images/Website%20Images/Headshots/grainne-thumb.jpg", "Hello I'm the Platforms Lead.");
 
 
 
