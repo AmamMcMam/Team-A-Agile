@@ -3,7 +3,10 @@
 ## Table of Contents
 - Setup Instructions
     - Backend Setup
+        - Java SDK
+        - Intellij
     - Frontend Setup
+        - Microsoft Visual Studio
 - Testing Instructions
     - Unit Tests
     - Cucumber Tests
@@ -11,6 +14,13 @@
 ## Setup Instructions
 
 ### Backend Setup
+
+####  **Java SDK**
+This project requires Java JDK version 16:
+- [JDK 16 Download](https://www.oracle.com/java/technologies/javase-jdk16-downloads.html)
+
+
+####  **Intellij**
 For the backend you will need to install Intellij Community Edition if you don't already have it. Here is a link to the download page:
 
 - [Intellij Download](https://www.jetbrains.com/idea/download/#section=mac)
@@ -44,6 +54,8 @@ You should be able to now run the backend by clicking the green arrow in the top
 ---
 
 ### Frontend Setup
+
+####  **Microsoft Visual Studio**
 
 For the frontend you will need to install Microsoft Visual Studio Code.
 
