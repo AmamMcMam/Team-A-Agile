@@ -13,6 +13,5 @@ exports.getCapabilityRoles = async (id) => {
     const capabilityData = await response.json();
     const leadInformationResponse = await fetch(`${api_url}/capabilities/${id}/lead`,{method:'GET',headers:{}})
     const leadData = await leadInformationResponse.json();
-    console.log(leadData)
     return {capabilityData, leadData};
 };
