@@ -43,6 +43,12 @@ username: placeholder
 password: placeholder
 url: placeholder
 ```
+After that you need to open the terminal inside Intellij. Just click on the terminal tab at the bottom of the page. On the command line type:
+
+```
+npm clean install
+```
+
 
 Next you will need to click on the drop-down menu in the top right next to the green hammer and click 'Edit Configurations'
 ![reference](images/setup1.png)
@@ -72,9 +78,15 @@ API_URL=http://localhost:placeholder/api
 Open the terminal in VScode by going to 'View' -> 'Terminal'
 ![reference](images/setup2.png)
 
-On the command line type "npm install"
+On the command line type:
+```
+npm install
+```
 
-Then once the packages have installed type "npm start".
+Then once the packages have installed type:
+```
+npm start
+```
 
 You now should be able to go to the localhost url, replace placeholder with your port number: http://localhost:placeholder/
 
