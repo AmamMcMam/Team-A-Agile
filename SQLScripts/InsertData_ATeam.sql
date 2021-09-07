@@ -6,11 +6,11 @@ VALUES ("Apprentice", ""), ("Trainee", ""), ("Associate", ""),("Senior Associate
 
 
 
-INSERT INTO capability (capability) VALUES(("Engineering"),("Platforms"));
+INSERT INTO capability (capability) VALUES("Engineering"),("Platforms");
 
 
 
-INSERT INTO roles (`roleName`, `roleDesc`, `datePosted`, `hours`, `location`, `bandID`, `capabilityID`, `link`)
+INSERT INTO role (`roleName`, `roleDesc`, `datePosted`, `hours`, `location`, `bandID`, `capabilityID`, `link`)
 VALUES ("Product Principal", "As a Product Principal you'll be responsible for directing and leading significant consulting assignments and delivering business solutions that meet client needs.
 Work closely with the Sales team to develop and deliver a strategy for adding value to the clients, ensuring that expectations are managed proactively and any issues arising are dealt with promptly and appropriately.
 Initiate & build trusted relationships with clients at senior/Board level, based upon personal credibility and a sound understanding of business & industry sector dynamics.
