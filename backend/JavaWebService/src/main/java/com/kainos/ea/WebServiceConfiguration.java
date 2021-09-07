@@ -15,6 +15,4 @@ public class WebServiceConfiguration extends Configuration {
     public void setSwagger(SwaggerBundleConfiguration swagger) {
         this.swaggerBundleConfiguration = swagger;
     }
-
-
 }
