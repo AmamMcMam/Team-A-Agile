@@ -10,7 +10,7 @@ CREATE TABLE `capability` (
 
 CREATE TABLE `band` (
   `bandID` tinyint NOT NULL AUTO_INCREMENT,
-  `bandName` varchar(40) NOT NULL
+  `bandName` varchar(40) NOT NULL,
    PRIMARY KEY (`bandID`)
 );
 
