@@ -2,3 +2,8 @@ logging:
   level: INFO
   loggers:
     com.kainos.ea: DEBUG
+
+
+# the only required property is resourcePackage, for more config options see below
+swagger:
+ resourcePackage: com.kainos.ea.controllers

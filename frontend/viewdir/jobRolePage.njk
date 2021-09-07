@@ -27,5 +27,16 @@
                 {% endif %}
             </div>
         </div>
+
+        <div class="divider"></div>
+
+        <h5><span class="sub-heading-blue" id="responsibility-title">Role Responsibilities</span></h5>
+        <ul class="responsibility-list">
+            {% for responsibility in role.jobResponsibilities %}
+                <li>
+                    {{responsibility}}
+                </li>
+            {% endfor %}
+        </ul>
     </div>
 {% endblock %}

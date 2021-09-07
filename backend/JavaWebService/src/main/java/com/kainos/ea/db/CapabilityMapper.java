@@ -8,11 +8,16 @@ import java.util.List;
 
 @Mapper
 public interface CapabilityMapper {
-    @Select("select roleID, roleName, roleDesc, datePosted, hours, location, bandID, capabilityID " +
-            "from roles JOIN capability using(capabilityID) " +
+    @Select("select roleID, roleName, datePosted, location " +
+            "from role JOIN capability using(capabilityID) " +
             "where capabilityID = #{cap}")
     List<Role> rolesPerCapability(@Param("cap") int capability);
 
     @Select("select capabilityID, capability from capability")
     List<Capability> getCapabilities();
+
+    @Select("select capabilityLeadName, capabilityLeadPhoto, capabilityLeadMessage "
+            + "from capability "
+            + "where capabilityID = #{cap}")
+    Capability getLeadPerCapability(@Param("cap") int capabilityID);
 }
