@@ -19,7 +19,7 @@ Manage and motivate assignment teams and projects, ensuring that all have clear 
 
 
 
-INSERT INTO responsibilities (`responsibilityId`, `responsibility`)
+INSERT INTO responsibility (`responsibilityId`, `responsibility`)
 VALUES (1,"Has successfully delivered software designs for multi-tiered modern software applications."),
 	   (2,"Understands whole solution architecture concepts and can communicate and negotiate these with customer architects."),
 	   (3,"Can prioritise non-functional concerns for customers and has experience incorporating these into the application design."),
@@ -27,7 +27,7 @@ VALUES (1,"Has successfully delivered software designs for multi-tiered modern s
 
 
 
-INSERT INTO role_responsibilities (`roleId`, `responsibilityId`)
+INSERT INTO role_responsibility (`roleId`, `responsibilityId`)
 VALUES (1, 1),
 	   (1, 4),
 	   (2, 2),

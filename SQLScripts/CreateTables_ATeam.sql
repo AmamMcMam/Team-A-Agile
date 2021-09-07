@@ -2,7 +2,7 @@ CREATE DATABASE Kainos_A;
 
 use Kainos_A;
 
-CREATE TABLE `roles` (
+CREATE TABLE `role` (
   `roleID` smallint NOT NULL AUTO_INCREMENT,
   `roleName` varchar(100) NOT NULL,
   `roleDesc` text NOT NULL,
@@ -30,19 +30,6 @@ CREATE TABLE `band` (
   PRIMARY KEY (`bandID`)
 );
 
- CREATE TABLE `responsibilities` (
-  `responsibilityId` smallint NOT NULL,
-  `responsibility` text NOT NULL,
-   PRIMARY KEY (`responsibilityId`)
- );
-
- CREATE TABLE `role_responsibilities` (
-  `roleId` smallint NOT NULL,
-  `responsibilityId` smallint NOT NULL,
-   PRIMARY KEY (`roleId`,`responsibilityId`),
-   CONSTRAINT `role_responsibilities_ibfk_1` FOREIGN KEY (`responsibilityId`) REFERENCES `responsibilities` (`responsibilityId`)
- );
-
 CREATE TABLE competency(
     competencyID TINYINT PRIMARY KEY AUTO_INCREMENT,
     competencyName varchar (40),
@@ -60,3 +47,15 @@ CREATE TABLE competency_element(
     CONSTRAINT band_to_competency_element_FK FOREIGN KEY (bandID) REFERENCES band (bandID)
 );
 
+CREATE TABLE `responsibility` (
+ `responsibilityId` smallint NOT NULL,
+ `responsibilityTitle` text NOT NULL,
+  PRIMARY KEY (`responsibilityId`)
+);
+
+CREATE TABLE `role_responsibility` (
+ `roleId` smallint NOT NULL,
+ `responsibilityId` smallint NOT NULL,
+  PRIMARY KEY (`roleId`,`responsibilityId`),
+  CONSTRAINT `role_responsibilities_ibfk_1` FOREIGN KEY (`responsibilityId`) REFERENCES `responsibility` (`responsibilityId`)
+);
