@@ -22,7 +22,7 @@ This project requires Java JDK version 16:
 
 
 ####  **Intellij**
-For the backend you will need to install Intellij Community Edition if you don't already have it. Here is a link to the download page:
+For the backend we recommend you install Intellij Community Edition if you don't already have it. Here is a link to the download page:
 
 - [Intellij Download](https://www.jetbrains.com/idea/download/#section=mac)
 
@@ -83,11 +83,8 @@ For the frontend we recommend you use Microsoft Visual Studio Code.
 1. Open the frontend folder
 
 2. In the root of the frontend folder create a file called ".env". 
-	
-	+-- frontend
-	|   +-- .env
-	
-	3. Inside the .env file, copy the code below replacing the 'placeholder' with the port number of the backend api. Make sure to save the file once added.
+
+3. Inside the .env file, copy the code below replacing the 'placeholder' with the port number of the backend api. Make sure to save the file once added.
 ```
 API_URL=http://localhost:placeholder/api
 ```
