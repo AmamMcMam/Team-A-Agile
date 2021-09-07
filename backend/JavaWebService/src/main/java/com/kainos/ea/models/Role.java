@@ -16,7 +16,6 @@ public class Role {
     private String hours;
     private String location;
     private int bandID;
-    private int capabilityID;
     private String link;
     private static final DateTimeFormatter FORMATTER = DateTimeFormatter.ofPattern("dd-MM-yyyy");
     private List<String> jobResponsibilities;
@@ -31,7 +30,6 @@ public class Role {
             String hours,
             String location,
             int bandID,
-            int capabilityID,
             String link,
             String jobResponsibilities
     ) {
@@ -42,7 +40,6 @@ public class Role {
         this.hours = hours;
         this.location = location;
         this.bandID = bandID;
-        this.capabilityID = capabilityID;
         this.link = link;
         if (jobResponsibilities != null) {
             this.jobResponsibilities = Arrays.asList(jobResponsibilities.split(","));
@@ -106,13 +103,6 @@ public class Role {
         this.bandID = bandID;
     }
 
-    public int getCapabilityID() {
-        return capabilityID;
-    }
-
-    public void setCapabilityID(int capabilityID) {
-        this.capabilityID = capabilityID;
-    }
     public String getLink() {
         return link;
     }
