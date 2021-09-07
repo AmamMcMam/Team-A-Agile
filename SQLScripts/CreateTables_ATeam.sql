@@ -30,21 +30,21 @@ CREATE TABLE `band` (
   PRIMARY KEY (`bandID`)
 );
 
-CREATE TABLE 'competency'(
-    'competencyID' tinyint PRIMARY KEY AUTO_INCREMENT,
-    'competencyName' varchar (40),
-    'competencyDescription' text
+CREATE TABLE `competency`(
+    `competencyID` tinyint PRIMARY KEY AUTO_INCREMENT,
+    `competencyName` varchar (40),
+    `competencyDescription` text
 );
 
-CREATE TABLE 'competency_element'(
-    'competencyElementID' tinyint AUTO_INCREMENT,
-    'competencyID' tinyint NOT NULL,
-    'elementName' varchar (40),
-    'bandID' tinyint,
-    'elementDescription' text,
-    PRIMARY KEY ('competencyElementID'),
-    CONSTRAINT 'competency_element_to_competency_FK' FOREIGN KEY ('competencyID') REFERENCES 'competency' ('competencyID'),
-    CONSTRAINT 'band_to_competency_element_FK' FOREIGN KEY ('bandID') REFERENCES 'band' ('bandID')
+CREATE TABLE `competency_element`(
+    `competencyElementID` tinyint AUTO_INCREMENT,
+    `competencyID` tinyint NOT NULL,
+    `elementName` varchar (40),
+    `bandID` tinyint,
+    `elementDescription` text,
+    PRIMARY KEY (`competencyElementID`),
+    CONSTRAINT `competency_element_to_competency_FK` FOREIGN KEY (`competencyID`) REFERENCES `competency` (`competencyID`),
+    CONSTRAINT `band_to_competency_element_FK` FOREIGN KEY (`bandID`) REFERENCES `band` (`bandID`)
 );
 
 CREATE TABLE `responsibility` (
