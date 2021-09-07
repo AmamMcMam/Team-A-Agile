@@ -40,7 +40,7 @@ app.get("/capabilities", async (req, res) => {
 
 app.get("/capabilities/:id", async (req, res) => {
     const results = await caps.getCapabilityRoles(req.params.id);
-    res.render("jobRolesPage", {items: results});
+    res.render('jobRolesPage', {items: results.capabilityData, lead: results.leadData});
 });
 
 app.get("/bands/:id/competency", async (req, res) => {

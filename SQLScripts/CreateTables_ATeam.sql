@@ -5,6 +5,9 @@ use Kainos_A;
 CREATE TABLE `capability` (
   `capabilityID` tinyint NOT NULL AUTO_INCREMENT,
   `capability` varchar(40) DEFAULT NULL,
+  `capabilityLeadName` varchar(200) NOT NULL,
+  `capabilityLeadPhoto` varchar(1000) NOT NULL,
+  `capabilityLeadMessage` text NOT NULL,
   PRIMARY KEY (`capabilityID`)
 );
 

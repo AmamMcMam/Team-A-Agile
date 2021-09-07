@@ -32,4 +32,11 @@ public class CapabilitiesController {
     public List<Role> getRolesForCapability(@PathParam("capabilityId") int capabilityId){
         return service.rolesPerCapability(capabilityId);
     }
+
+    @GET
+    @Path("/capabilities/{capabilityId}/lead")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Capability getLeadPerCapability(@PathParam("capabilityId") int capabilityId){
+        return service.getLeadPerCapability(capabilityId);
+    }
 }
