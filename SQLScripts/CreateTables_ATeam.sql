@@ -2,6 +2,19 @@ CREATE DATABASE Kainos_A;
 
 use Kainos_A;
 
+CREATE TABLE `capability` (
+  `capabilityID` tinyint NOT NULL AUTO_INCREMENT,
+  `capability` varchar(40) DEFAULT NULL,
+  PRIMARY KEY (`capabilityID`)
+);
+
+CREATE TABLE `band` (
+  `bandID` tinyint NOT NULL AUTO_INCREMENT,
+  `bandName` varchar(40) NOT NULL,
+  `bandExpectations` text,
+  PRIMARY KEY (`bandID`)
+);
+
 CREATE TABLE `role` (
   `roleID` smallint NOT NULL AUTO_INCREMENT,
   `roleName` varchar(100) NOT NULL,
@@ -15,19 +28,6 @@ CREATE TABLE `role` (
   PRIMARY KEY (`roleID`),
   CONSTRAINT `band_to_role_FK` FOREIGN KEY (`bandID`) REFERENCES `band` (`bandID`),
   CONSTRAINT `capability_to_role_FK` FOREIGN KEY (`capabilityID`) REFERENCES `capability` (`capabilityID`)
-);
-
-CREATE TABLE `capability` (
-  `capabilityID` tinyint NOT NULL AUTO_INCREMENT,
-  `capability` varchar(40) DEFAULT NULL,
-  PRIMARY KEY (`capabilityID`)
-);
-
-CREATE TABLE `band` (
-  `bandID` tinyint NOT NULL AUTO_INCREMENT,
-  `bandName` varchar(40) NOT NULL,
-  `bandExpectations` text,
-  PRIMARY KEY (`bandID`)
 );
 
 CREATE TABLE `competency`(
