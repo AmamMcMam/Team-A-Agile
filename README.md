@@ -99,6 +99,10 @@ In order to run these tests just left click the green arrow next to the class na
 
 ### Cucumber Tests
 
+You will need chromedriver installed:
+
+- [Download](https://chromedriver.chromium.org/downloads)
+
 The Selenium tests which interact with the frontend application are located in the 'integration' folder in the root directory.
 
 Open this folder in Intellij. This folder also has a pom.xml file which you will most likely have to reload. This will make sure the dependencies are loaded.
