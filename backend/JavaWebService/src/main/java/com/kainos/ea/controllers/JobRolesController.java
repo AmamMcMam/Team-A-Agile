@@ -2,6 +2,7 @@ package com.kainos.ea.controllers;
 
 import com.kainos.ea.models.Role;
 import com.kainos.ea.services.RoleService;
+import io.swagger.annotations.Api;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -10,6 +11,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import java.util.List;
 
+@Api
 @Path("/api")
 public class JobRolesController {
     private RoleService service;
