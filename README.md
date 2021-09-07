@@ -1,15 +1,15 @@
 # Team-A-Agile
 
 ## Table of Contents
-- Setup Instructions
-    - Backend Setup
-        - Java SDK
-        - Intellij
-    - Frontend Setup
-        - Microsoft Visual Studio
-- Testing Instructions
-    - Unit Tests
-    - Cucumber Tests
+- [Setup Instructions](#setup-instructions)
+    - [Backend Setup](#backend-setup)
+        - [Java SDK](#java-sdk)
+        - [Intellij](#intellij)
+    - [Frontend Setup](#frontend-setup)
+        - [Microsoft Visual Studio](#microsoft-visual-studio)
+- [Testing Instructions](#testing-instructions)
+    - [Unit Tests](#unit-tests)
+    - [Cucumber Tests](#cucumber-tests)
 
 ## Setup Instructions
 
