@@ -19,5 +19,5 @@ public interface CapabilityMapper {
     @Select("select capabilityLeadName, capabilityLeadPhoto, capabilityLeadMessage "
             + "from capability "
             + "where capabilityID = #{cap}")
-    List<Capability> getLeadPerCapability(@Param("cap") int capabilityID);
+    Capability getLeadPerCapability(@Param("cap") int capabilityID);
 }

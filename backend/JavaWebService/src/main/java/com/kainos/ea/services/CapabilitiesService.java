@@ -20,7 +20,7 @@ public class CapabilitiesService {
         return capabilityMapper.getCapabilities();
     }
 
-    public List<Capability> getLeadPerCapability(int capID) {
+    public Capability getLeadPerCapability(int capID) {
         return capabilityMapper.getLeadPerCapability(capID);
     }
 }

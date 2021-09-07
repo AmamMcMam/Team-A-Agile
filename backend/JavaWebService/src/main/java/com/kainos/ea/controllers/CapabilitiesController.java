@@ -36,7 +36,7 @@ public class CapabilitiesController {
     @GET
     @Path("/capabilities/{capabilityId}/lead")
     @Produces(MediaType.APPLICATION_JSON)
-    public List<Capability> getLeadPerCapability(@PathParam("capabilityId") int capabilityId){
+    public Capability getLeadPerCapability(@PathParam("capabilityId") int capabilityId){
         return service.getLeadPerCapability(capabilityId);
     }
 }
