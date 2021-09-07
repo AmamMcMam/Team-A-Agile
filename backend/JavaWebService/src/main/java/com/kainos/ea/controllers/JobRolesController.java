@@ -3,7 +3,10 @@ package com.kainos.ea.controllers;
 import com.kainos.ea.models.Role;
 import com.kainos.ea.services.RoleService;
 
-import javax.ws.rs.*;
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
+import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import java.util.List;
 
@@ -25,7 +28,5 @@ public class JobRolesController {
     @GET
     @Path("/job-roles/{id}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Role getRole (@PathParam("id") int roleID) {
-        return service.getRole(roleID);
-    }
+    public Role getRole (@PathParam("id") int roleID) {return service.getRole(roleID);}
 }

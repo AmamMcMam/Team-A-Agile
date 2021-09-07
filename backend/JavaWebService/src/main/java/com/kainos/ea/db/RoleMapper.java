@@ -7,10 +7,15 @@ import org.apache.ibatis.annotations.Select;
 
 @Mapper
 public interface RoleMapper {
-    @Select("select roleID, roleName, roleDesc, datePosted, hours, location, bandID, capabilityID, link from roles where roleID = #{roleID}")
+    @Select("SELECT r.roleName, r.roleDesc, r.datePosted, r.hours, r.location, r.bandID, r.link," +
+            "group_concat(re.responsibility) as jobResponsibilities FROM role r" +
+            " LEFT JOIN role_responsibilities rr ON r.roleID = rr.roleId" +
+            " LEFT JOIN responsibilities re ON rr.responsibilityId = re.responsibilityId" +
+            " WHERE r.roleID = #{roleID}" +
+            " GROUP BY " + "r.roleID;")
     Role getRole(int roleID);
 
-    @Select("select bandID, bandName, bandExpectations from band where bandID = #{roleBandId}")
+    @Select("select bandID, bandName from band where bandID = #{roleBandId}")
     Band getBand(int roleBandId);
 
 }
