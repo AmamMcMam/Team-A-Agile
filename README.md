@@ -124,6 +124,10 @@ In order to run these tests just left click the green arrow next to the class na
 
 ![reference](images/setup3.png)
 
+If you want to run all of the Unit tests, type in the terminal:
+```
+mvn clean install
+```
 ---
 
 ### Cucumber Tests
