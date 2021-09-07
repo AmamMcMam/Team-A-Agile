@@ -32,7 +32,7 @@ CREATE TABLE `role` (
 
 CREATE TABLE `competency`(
     `competencyID` tinyint PRIMARY KEY AUTO_INCREMENT,
-    `competencyName` varchar (40),
+    `competencyName` varchar (80),
     `competencyDescription` text
 );
 
