@@ -103,6 +103,14 @@ public class Role {
         this.bandID = bandID;
     }
 
+    public String getLink() {
+        return link;
+    }
+
+    public void setLink(String link) {
+        this.link = link;
+    }
+
     public void setJobResponsibilities(String jobResponsibilities) {
         this.jobResponsibilities = Arrays.asList(jobResponsibilities.split(","));
     }
