@@ -17,5 +17,4 @@ public interface RoleMapper {
 
     @Select("select bandID, bandName from band where bandID = #{roleBandId}")
     Band getBand(int roleBandId);
-
 }

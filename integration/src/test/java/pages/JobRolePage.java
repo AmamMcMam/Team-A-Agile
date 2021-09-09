@@ -72,6 +72,4 @@ public class JobRolePage extends PageObject {
     public void clickSharepointLink() {
         specificationLink.click();
     }
-
 }
-

@@ -1,3 +1,4 @@
+
 import com.kainos.ea.controllers.BandsController;
 import com.kainos.ea.models.Band;
 import com.kainos.ea.models.CompetencyElement;
@@ -11,7 +12,6 @@ import org.mockito.junit.MockitoJUnitRunner;
 import java.util.Arrays;
 import java.util.List;
 import static org.junit.Assert.assertSame;
-
 
 @RunWith(MockitoJUnitRunner.class)
 public class BandsControllerTest {

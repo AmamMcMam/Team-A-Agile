@@ -39,7 +39,7 @@ public class BandsController {
     @Path("/bands/{id}")
     @Produces(MediaType.APPLICATION_JSON)
     public Band getBand (@PathParam("id") int bandID) {
-       return service.getBand(bandID);
+        return service.getBand(bandID);
     }
 
     @GET

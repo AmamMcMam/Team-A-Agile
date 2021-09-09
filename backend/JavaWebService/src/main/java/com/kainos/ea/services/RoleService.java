@@ -23,5 +23,3 @@ public class RoleService {
         return roleMapper.getRole(roleID);
     }
 }
-
-
