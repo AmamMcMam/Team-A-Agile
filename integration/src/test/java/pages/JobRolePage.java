@@ -1,5 +1,6 @@
 package pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -13,6 +14,10 @@ public class JobRolePage extends PageObject {
 
     @FindBy(id = "bandName")
     private WebElement bandName;
+
+    @FindBy(id = "responsibility-title") private WebElement responsibilityTitle;
+
+    @FindBy(xpath = "//li") private List<WebElement> listItem;
 
     @FindBy(id = "roleDatePosted")
     private WebElement roleDatePosted;
@@ -36,6 +41,12 @@ public class JobRolePage extends PageObject {
 
     public String getBandName() {
         return bandName.getText();
+    }
+
+    public String getRespTitle() { return responsibilityTitle.getText();}
+
+    public int getResponsibility() {
+        return listItem.size();
     }
 
     public String getRoleName() {

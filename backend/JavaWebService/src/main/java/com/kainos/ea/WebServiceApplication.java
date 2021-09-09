@@ -1,4 +1,7 @@
 package com.kainos.ea;
+import com.kainos.ea.controllers.BandsController;
+import com.kainos.ea.controllers.JobRolesController;
+import com.kainos.ea.db.BandMapper;
 import com.kainos.ea.db.CapabilityMapper;
 import com.kainos.ea.db.RoleMapper;
 import com.kainos.ea.db.RolesMapper;
@@ -6,10 +9,11 @@ import com.kainos.ea.controllers.CapabilitiesController;
 import com.kainos.ea.services.CapabilitiesService;
 import com.kainos.ea.services.BandService;
 import com.kainos.ea.services.RoleService;
-import com.kainos.ea.controllers.*;
 import io.dropwizard.Application;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
+import io.federecio.dropwizard.swagger.SwaggerBundle;
+import io.federecio.dropwizard.swagger.SwaggerBundleConfiguration;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -31,7 +35,13 @@ public class WebServiceApplication extends Application<WebServiceConfiguration> 
     }
 
     @Override
-    public void initialize(final Bootstrap<WebServiceConfiguration> bootstrap) {
+    public void initialize(Bootstrap<WebServiceConfiguration> bootstrap) {
+        bootstrap.addBundle(new SwaggerBundle<>() {
+            @Override
+            protected SwaggerBundleConfiguration getSwaggerBundleConfiguration(WebServiceConfiguration configuration) {
+                return configuration.getSwagger();
+            }
+        });
     }
 
     @Override
@@ -49,11 +59,12 @@ public class WebServiceApplication extends Application<WebServiceConfiguration> 
         // Register resources
         RolesMapper rolesMapper = sqlSession.getMapper(RolesMapper.class);
         RoleMapper roleMapper = sqlSession.getMapper(RoleMapper.class);
+        BandMapper bandMapper = sqlSession.getMapper(BandMapper.class);
         CapabilityMapper capabilityMapper = sqlSession.getMapper(CapabilityMapper.class);
 
 
         RoleService rolesService = new RoleService(rolesMapper, roleMapper);
-        BandService bandService = new BandService(roleMapper);
+        BandService bandService = new BandService(roleMapper, bandMapper);
         CapabilitiesService capabilityService = new CapabilitiesService(capabilityMapper);
 
         environment.jersey().register(new BandsController(bandService));

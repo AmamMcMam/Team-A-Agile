@@ -25,6 +25,15 @@ public class JobRolesPage extends PageObject {
     @FindBy(id = "role-2")
     private WebElement roleName2;
 
+    @FindBy(id = "lead-name")
+    private WebElement leadName;
+
+    @FindBy(id = "lead-photo")
+    private WebElement leadPhoto;
+
+    @FindBy(id = "lead-message")
+    private WebElement leadMessage;
+
     public JobRolesPage(WebDriver driver) {
         super(driver);
     }
@@ -45,6 +54,18 @@ public class JobRolesPage extends PageObject {
         return date.getText();
     }
 
+    public String getLeadName() {
+        return leadName.getText();
+    }
+
+    public String getLeadPhoto() {
+        return leadPhoto.getAttribute("src");
+    }
+
+    public String getLeadMessage() {
+        return leadMessage.getText();
+    }
+
     public int getTotalJobRoles() {
         return amountOfJobs.size();
     }
@@ -52,6 +73,7 @@ public class JobRolesPage extends PageObject {
     public void clickJobRole() {
         roleName.click();
     }
+
     public void clickSecondRoleOnPage() {
         roleName2.click();
     }
