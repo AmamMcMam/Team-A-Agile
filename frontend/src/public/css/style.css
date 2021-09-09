@@ -55,3 +55,22 @@ main {
 .home-page-icons{
     height: 50px;
 }
+
+ul.responsibility-list li {
+    list-style-type: disc;
+    display: list-item;
+    margin-left: 1em;
+}
+.comp-sub-heading{
+    color:#41679f;
+    height: 25px;
+}
+
+.collection .collection-item {
+    margin-top: 0.5%;
+    background-color: #61a83f;
+}
+
+.collection .collection-item.avatar {
+    min-height: 0px;
+}

@@ -36,4 +36,13 @@ public class CapabilitiesPageStepDefinitions {
         assertEquals(results, jobRolesPage.getResults());
         return this;
     }
+
+    @And("the capability lead {}, {} and {} is displayed")
+    public CapabilitiesPageStepDefinitions capabilityHasLead(String leadName, String leadPhoto, String leadMessage) {
+        JobRolesPage jobRolesPage = new JobRolesPage(driver);
+        assertEquals(leadName, jobRolesPage.getLeadName());
+        assertEquals(leadPhoto, jobRolesPage.getLeadPhoto());
+        assertEquals(leadMessage, jobRolesPage.getLeadMessage());
+        return this;
+    }
 }

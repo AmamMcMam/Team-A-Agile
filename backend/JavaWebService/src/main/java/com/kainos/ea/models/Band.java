@@ -3,14 +3,16 @@ package com.kainos.ea.models;
 public class Band{
     private int bandID;
     private String bandName;
-    private String bandExpectations;
 
     public Band(){}
 
-    public Band(int bandID, String bandName, String bandExpectations){
+    public Band(int bandID, String bandName){
         this.bandID = bandID;
         this.bandName = bandName;
-        this.bandExpectations = bandExpectations;
+    }
+
+    public int getBandID() {
+        return bandID;
     }
 
     public String getBandName() {
@@ -20,9 +22,4 @@ public class Band{
     public void setBandName(String bandName) {
         this.bandName = bandName;
     }
-
-    public String getBandExpectations() {
-        return bandExpectations;
-    }
-
 }
